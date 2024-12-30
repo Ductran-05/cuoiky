@@ -1,0 +1,108 @@
+﻿<Window x:Class="doanwpf.ADD.AddImportInvoice"
+                               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:doanwpf"
+                        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+TextElement.FontWeight="Regular"
+TextElement.FontSize="13"
+TextOptions.TextFormattingMode="Ideal"
+TextOptions.TextRenderingMode="Auto"
+Background="White"
+FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="AddProduct" Height="450" Width="800">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF192537">
+            <Label  Margin="20,0,0,0" FontSize="20" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontFamily="Bahnschrift SemiLight Condensed">
+                Thông tin hóa đơn
+            </Label>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Border Margin="20" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="White">
+                <ScrollViewer>
+                    <StackPanel Margin="40" Background="White">
+                        <ComboBox Margin="20,0,20,0"
+                        MinWidth="72"
+                        materialDesign:HintAssist.FontFamily="Verdana"
+                        materialDesign:HintAssist.Hint="Mã nhân viên"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
+                            <ComboBoxItem Content="op1"/>
+                        </ComboBox>
+                        <DatePicker  HorizontalAlignment="Left" Margin="20,0,0,0"
+                        Width="100"
+                        materialDesign:HintAssist.Hint="Ngày hóa đơn"
+                        materialDesign:TextFieldAssist.HasClearButton="True"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" FontSize="13" />
+                        <ComboBox Margin="20,0,20,0"
+                        MinWidth="72"
+                        materialDesign:HintAssist.FontFamily="Verdana"
+                        materialDesign:HintAssist.Hint="Mã nhà cung cấp"
+                        Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
+                            <ComboBoxItem Content="op1"/>
+                        </ComboBox>
+                        <Grid>
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                <Button Width="100" Height="30" Margin="10"
+                                materialDesign:ButtonAssist.CornerRadius="15"
+                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click">
+                                    <TextBlock Text="Thêm" />
+                                </Button>
+                                <Button Width="100" Height="30" Margin="10"
+                                materialDesign:ButtonAssist.CornerRadius="15"
+                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" >
+                                    <TextBlock Text="Xóa" />
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <Border Height="200"
+                                CornerRadius="50">
+                            <DataGrid  Margin="20,5,20,5" x:Name="ProductDataGrid" AutoGenerateColumns="False" CanUserAddRows="True">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="STT" Binding="{Binding Index}" Width="100" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Mã Sản Phẩm" Binding="{Binding ProductName}" Width="*"/>
+                                    <DataGridTextColumn Header="Số Lượng" Binding="{Binding Quantity}" Width="100"/>
+                                    <DataGridTextColumn Header="Đơn Giá" Binding="{Binding UnitPrice}" Width="100"/>
+                                    <DataGridTextColumn Header="Thành Tiền" Binding="{Binding TotalPrice}" Width="100" IsReadOnly="True"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Border>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Width="200" Height="50" Margin="10"
+    materialDesign:ButtonAssist.CornerRadius="25"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                    <TextBlock
+      Text="Thêm" />
+                </Button>
+                <Button Width="200" Height="50" Margin="10"
+materialDesign:ButtonAssist.CornerRadius="25"
+IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+Style="{StaticResource MaterialDesignRaisedDarkButton}"
+ToolTip="MaterialDesignRaisedDarkButton with Round Corners" >
+                    <TextBlock
+  Text="Hủy" />
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

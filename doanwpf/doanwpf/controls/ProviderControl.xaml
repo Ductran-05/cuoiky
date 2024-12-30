@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="doanwpf.ProviderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:doanwpf"
+                        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+TextElement.FontWeight="Regular"
+TextElement.FontSize="13"
+TextOptions.TextFormattingMode="Ideal"
+TextOptions.TextRenderingMode="Auto"
+Background="White"
+FontFamily="{DynamicResource MaterialDesignFont}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Button  Content="Thêm nhà cung cấp" Height="30" Width="180" Background="#FF192537"
+       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Button_Click"/>
+            <Label HorizontalAlignment="Left" Content="Providers" VerticalAlignment="Center" Margin="20,20,20,20"
+  FontFamily="Bahnschrift SemiLight Condensed" FontSize="24" Background="#FF192537" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <materialDesign:Card>
+                <TabControl HorizontalContentAlignment="Left">
+                    <TabItem Margin="10,0,0,0" Header="Danh sách nhà cung cấp">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBox Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                                <materialDesign:HintAssist.Hint>
+                                    <StackPanel Orientation="Horizontal" Width="140">
+                                        <!-- Icon -->
+                                        <materialDesign:PackIcon Kind="Magnify" />
+                                        <!-- Context -->
+                                        <TextBlock Text="Tìm nhà cung cấp" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </materialDesign:HintAssist.Hint>
+                            </TextBox>
+                            
+                            <DataGrid Grid.Row="1" ItemsSource="{Binding nhacungcaplist}" 
+AutoGenerateColumns="False" Margin="10"
+materialDesign:DataGridAssist.CellPadding="4 2 2 2"
+materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
+
+                                <DataGrid.Columns >
+                                    <DataGridTextColumn Header="Mã nhà cung cấp" Binding="{Binding MaNCC}" />
+                                    <DataGridTextColumn Header="Tên nhà cung cáp" Binding="{Binding TenNCC}" />
+                                    <DataGridTextColumn Header="Số điện thoại" Binding="{Binding SDT}" Width="*" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+</UserControl>

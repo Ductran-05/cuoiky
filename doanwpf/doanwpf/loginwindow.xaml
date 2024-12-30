@@ -1,0 +1,77 @@
+﻿<Window x:Class="doanwpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:doanwpf"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize" Closed="Window_Closed" Closing="Window_Closing">
+    <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/pngtree-closet-full-of-and-shoes-image_2967716.jpg"/>
+        </Grid.Background>
+        <Grid Height="250" Width="400">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.8"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontFamily="Bahnschrift SemiLight Condensed"
+                       FontSize="30" Background="Transparent">
+                    LOGIN
+                </Label>
+            </Grid>
+            <Grid Grid.Row="1">
+                <TextBox Margin="30,0,30,0" Name="UsernameTextBox" Height="35" Text="DANH"
+  VerticalAlignment="Center"
+  materialDesign:HintAssist.Hint="Username"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <PasswordBox Margin="30,0,30,0" Password="danh"
+                 Height="{Binding ElementName=UsernameTextBox, Path=Height}"
+  x:Name="FloatingPasswordBox"
+  materialDesign:HintAssist.Hint="Password"
+  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+            </Grid>
+            <StackPanel Orientation="Horizontal" Grid.Row="3"
+                        HorizontalAlignment="Center">
+                <Grid>
+                    <Button Margin="10" Width="70"
+    materialDesign:ButtonAssist.CornerRadius="15"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click">
+                        <TextBlock
+      Text="Login" />
+                    </Button>
+                </Grid>
+                <Grid>
+                    <Button Margin="10" Width="70"
+    materialDesign:ButtonAssist.CornerRadius="15"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+                        <TextBlock
+      Text="Exit"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

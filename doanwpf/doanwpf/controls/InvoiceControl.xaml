@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="doanwpf.InvoiceControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:doanwpf"
+                        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+TextElement.FontWeight="Regular"
+TextElement.FontSize="13"
+TextOptions.TextFormattingMode="Ideal"
+TextOptions.TextRenderingMode="Auto"
+Background="White"
+FontFamily="{DynamicResource MaterialDesignFont}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Button  Content="Thêm hóa đơn" Height="30" Width="150" Background="#FF192537"
+HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Button_Click"/>
+            <Label HorizontalAlignment="Left" Content="Invoices" VerticalAlignment="Center" Margin="20,20,20,20"
+              FontFamily="Bahnschrift SemiLight Condensed" FontSize="24" Background="#FF192537" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" />
+        </Grid>
+        <TabControl Grid.Row="1" HorizontalContentAlignment="Left">
+            <TabItem Margin="10,0,0,0" Header="Danh sách hóa đơn">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                        <materialDesign:HintAssist.Hint>
+                            <StackPanel Orientation="Horizontal" Width="140">
+                                <!-- Icon -->
+                                <materialDesign:PackIcon Kind="Magnify" />
+                                <!-- Context -->
+                                <TextBlock Text="Tìm hóa đơn" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </materialDesign:HintAssist.Hint>
+                    </TextBox>
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding donhanglist}" 
+AutoGenerateColumns="False" Margin="10"
+materialDesign:DataGridAssist.CellPadding="4 2 2 2"
+materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
+
+                        <DataGrid.Columns >
+                            <DataGridTextColumn Header="Mã hóa đơn" Binding="{Binding MaHD}" />
+                            <DataGridTextColumn Header="Mã nhân viên" Binding="{Binding MaNV}" />
+                            <DataGridTextColumn Header="Ngày hóa đơn" Binding="{Binding NgayHD}" />
+                            <DataGridTextColumn Header="Mã khách hàng" Binding="{Binding MaKH}" />
+                            <DataGridTextColumn Header="Trị giá" Binding="{Binding Trigia}" Width="*" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,166 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\users\\le khang\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\doancuoiky\\doanwpf\\doanwpf\\controls\\customercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\customercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\users\\le khang\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\doancuoiky\\doanwpf\\doanwpf\\controls\\customercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\customercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\add\\addcustomer.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\add\\addcustomer.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\add\\addemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\add\\addemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\model\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\model\\dataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\model\\database.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\model\\database.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\homewindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\homewindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 188,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "controls\\CustomerControl.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\controls\\CustomerControl.xaml.cs",
+              "RelativeDocumentMoniker": "doanwpf\\controls\\CustomerControl.xaml.cs",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\controls\\CustomerControl.xaml.cs",
+              "RelativeToolTip": "doanwpf\\controls\\CustomerControl.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T09:08:37.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerControl.xaml",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\controls\\CustomerControl.xaml",
+              "RelativeDocumentMoniker": "doanwpf\\controls\\CustomerControl.xaml",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\controls\\CustomerControl.xaml",
+              "RelativeToolTip": "doanwpf\\controls\\CustomerControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-28T09:08:29.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddCustomer.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddCustomer.xaml.cs",
+              "RelativeDocumentMoniker": "doanwpf\\ADD\\AddCustomer.xaml.cs",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddCustomer.xaml.cs*",
+              "RelativeToolTip": "doanwpf\\ADD\\AddCustomer.xaml.cs*",
+              "ViewState": "AgIAABcAAAAAAAAAAIA7wCwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T08:33:04.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddEmployee.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddEmployee.xaml.cs",
+              "RelativeDocumentMoniker": "doanwpf\\ADD\\AddEmployee.xaml.cs",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddEmployee.xaml.cs",
+              "RelativeToolTip": "doanwpf\\ADD\\AddEmployee.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T08:33:45.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "database.Context.cs",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\MODEL\\database.Context.cs",
+              "RelativeDocumentMoniker": "doanwpf\\MODEL\\database.Context.cs",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\MODEL\\database.Context.cs",
+              "RelativeToolTip": "doanwpf\\MODEL\\database.Context.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T08:10:31.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dataprovider.cs",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\MODEL\\dataprovider.cs",
+              "RelativeDocumentMoniker": "doanwpf\\MODEL\\dataprovider.cs",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\MODEL\\dataprovider.cs",
+              "RelativeToolTip": "doanwpf\\MODEL\\dataprovider.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T07:30:48.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\App.config",
+              "RelativeDocumentMoniker": "doanwpf\\App.config",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\App.config",
+              "RelativeToolTip": "doanwpf\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAACOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-28T07:03:04.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\HomeWindow.xaml.cs",
+              "RelativeDocumentMoniker": "doanwpf\\HomeWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\HomeWindow.xaml.cs",
+              "RelativeToolTip": "doanwpf\\HomeWindow.xaml.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAywCEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T17:10:00.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\HomeWindow.xaml",
+              "RelativeDocumentMoniker": "doanwpf\\HomeWindow.xaml",
+              "ToolTip": "C:\\Users\\LE KHANG\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\doancuoiky\\doanwpf\\doanwpf\\HomeWindow.xaml",
+              "RelativeToolTip": "doanwpf\\HomeWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-27T17:08:58.426Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
