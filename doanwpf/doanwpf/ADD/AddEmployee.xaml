@@ -29,20 +29,20 @@ FontFamily="{DynamicResource MaterialDesignFont}"
             <Border Margin="20" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="White">
                 <ScrollViewer >
                     <StackPanel Margin="40" Background="White">
-                        <TextBox Margin="20,0,0,0" VerticalAlignment="Center"
+                        <TextBox x:Name="emplname" Margin="20,0,0,0" VerticalAlignment="Center"
              materialDesign:HintAssist.Hint="Tên nhân viên"      
              Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
                         <RadioButton x:Name="rbNam" Content="Nam" GroupName="Gender" FontSize="12" 
                          Margin="20,10,0,0" />
                         <RadioButton x:Name="rbNu" Content="Nữ" GroupName="Gender" FontSize="12" 
                          Margin="20,0,0,10" />
-                        <TextBox Margin="20,0,0,0" VerticalAlignment="Center"
+                        <TextBox x:Name="address" Margin="20,0,0,0" VerticalAlignment="Center"
 materialDesign:HintAssist.Hint="Địa chỉ"    
 Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
-                        <TextBox Margin="20,0,0,0" VerticalAlignment="Center"
+                        <TextBox x:Name="phonenum" Margin="20,0,0,0" VerticalAlignment="Center"
 materialDesign:HintAssist.Hint="Số điện thoại"      
 Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
-                        <DatePicker  HorizontalAlignment="Left" Margin="20,0,0,0"
+                        <DatePicker Name="date" HorizontalAlignment="Left" Margin="20,0,0,0"
   Width="100"
   materialDesign:HintAssist.Hint="Ngày sinh"
   materialDesign:TextFieldAssist.HasClearButton="True"
@@ -58,7 +58,7 @@ Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
     materialDesign:ButtonAssist.CornerRadius="25"
     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Add_Click">
                     <TextBlock
       Text="Thêm" />
                 </Button>

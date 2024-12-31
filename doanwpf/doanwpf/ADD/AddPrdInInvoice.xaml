@@ -27,26 +27,23 @@ FontFamily="{DynamicResource MaterialDesignFont}"
             <Border Margin="20" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="White">
                 <ScrollViewer >
                     <StackPanel Margin="40" Background="White">
-                        <ComboBox Margin="20,0,20,0"
+                        <ComboBox Name="maspcbb" Margin="20,0,20,0"
   MinWidth="72"
   materialDesign:HintAssist.FontFamily="Verdana"
-  materialDesign:HintAssist.Hint="Mã loại sản phẩm"
+  materialDesign:HintAssist.Hint="Mã sản phẩm"
   Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
-                            <ComboBoxItem Content="op1"/>
                         </ComboBox>
-                        <TextBox Margin="20,0,20,0" VerticalAlignment="Center"
-             materialDesign:HintAssist.Hint="Tên sản phẩm"      
-             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:NumericUpDown Margin="20,0,20,0" HorizontalAlignment="Left">
+                            <materialDesign:NumericUpDown Name="soluong" Margin="20,0,20,0" HorizontalAlignment="Left">
                             </materialDesign:NumericUpDown>
                         </StackPanel>
-                        <TextBox Margin="20,0,20,0" VerticalAlignment="Center"
+                        <TextBox x:Name="dongiatxt" Margin="20,0,20,0" VerticalAlignment="Center"
 materialDesign:HintAssist.Hint="Đơn giá"      
 Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
-                        <TextBox Margin="20,0,20,0" VerticalAlignment="Center"
-materialDesign:HintAssist.Hint="Tên thành tiền"      
+                        <TextBox x:Name="giamgiatxt" Margin="20,0,20,0" VerticalAlignment="Center"
+materialDesign:HintAssist.Hint="Giảm giá"      
 Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
+                      
                     </StackPanel>
                 </ScrollViewer>
             </Border>
@@ -58,7 +55,7 @@ Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
     materialDesign:ButtonAssist.CornerRadius="25"
     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click">
                     <TextBlock
       Text="Thêm" />
                 </Button>

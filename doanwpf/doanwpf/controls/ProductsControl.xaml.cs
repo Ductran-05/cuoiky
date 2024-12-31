@@ -42,6 +42,7 @@ namespace doanwpf
             AddProduct addProduct = new AddProduct();          
             addProduct.ProductsControl=this;
             addProduct.ShowDialog();
+            dgproduct.Items.Refresh();
         }
         private void Repair_Click(object sender, RoutedEventArgs e)
         {

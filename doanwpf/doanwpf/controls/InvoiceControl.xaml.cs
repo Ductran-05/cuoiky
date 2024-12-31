@@ -35,7 +35,9 @@ namespace doanwpf
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddInvoice addInvoice = new AddInvoice();
+            addInvoice.InvoiceControl = this;
             addInvoice.Show();
+
         }
         void loaddonhangdata()
         {

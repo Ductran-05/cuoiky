@@ -221,3 +221,5 @@ C:\Users\LE KHANG\OneDrive\Tài liệu\GitHub\doancuoiky\doanwpf\doanwpf\obj\D
 C:\doancuoiky\doanwpf\doanwpf\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\doancuoiky\doanwpf\doanwpf\obj\Debug\REPAIR\RepairProduct.g.cs
 C:\doancuoiky\doanwpf\doanwpf\obj\Debug\REPAIR\RepairProduct.baml
+C:\doancuoiky\doanwpf\doanwpf\obj\Debug\ADD\AddCatalog.g.cs
+C:\doancuoiky\doanwpf\doanwpf\obj\Debug\ADD\AddCatalog.baml

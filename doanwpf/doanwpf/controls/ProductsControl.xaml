@@ -36,6 +36,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition/>
+                               
                             </Grid.RowDefinitions>
                             <TextBox Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}">
@@ -67,7 +68,6 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                     <DataGridTextColumn Header="Mã NCC" Binding="{Binding MaNCC}" />
                                     <DataGridTextColumn Header="Giá bán" Binding="{Binding Giaban}" />
                                     <DataGridTextColumn Header="Giá gốc" Binding="{Binding Giagoc}" />
-                                    <DataGridTextColumn Header="Tồn kho" Binding="{Binding TonKho}" />
                                     <DataGridTextColumn Header="Size" Binding="{Binding Size}" />
                                     <DataGridTextColumn Header="Mã chất liệu" Binding="{Binding MaCL}" />
                                     <DataGridTemplateColumn Header="Ảnh">
@@ -79,36 +79,57 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                     </DataGridTemplateColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
+                            
 
                         </Grid>
                     </TabItem>
                     <TabItem Margin="10,0,0,0" Header="Danh mục">
 
-                        <DataGrid Grid.Row="1" ItemsSource="{Binding loaisanphamlist}" 
-             AutoGenerateColumns="False" Margin="10"
-             materialDesign:DataGridAssist.CellPadding="4 2 2 2"
-             materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
-                            <DataGrid.Columns >
-                                <DataGridTextColumn Header="Mã loại Sản Phẩm" Binding="{Binding Maloai}" />
-                                <DataGridTextColumn Header="Tên loại Sản Phẩm" Binding="{Binding TenLSP}" />
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" ItemsSource="{Binding loaisanphamlist}" 
+                                        AutoGenerateColumns="False" Margin="10"
+                                        materialDesign:DataGridAssist.CellPadding="4 2 2 2"
+                                        materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
+                                <DataGrid.Columns >
+                                    <DataGridTextColumn Header="Mã loại Sản Phẩm" Binding="{Binding Maloai}" />
+                                    <DataGridTextColumn Header="Tên loại Sản Phẩm" Binding="{Binding TenLSP}" />
 
-                            </DataGrid.Columns>
-                        </DataGrid>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Grid Grid.Row="1">
+                                <Button  Content="Thêm danh mục" Height="30" Width="150" Background="#FF192537"
+HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Button_Click"/>
+                            </Grid>
+                        </Grid>
                         
                     </TabItem>
                     <TabItem Margin="10,0,0,0" Header="Chất liệu">
 
-                        <DataGrid Grid.Row="1" ItemsSource="{Binding chatlieulist}" 
-                        AutoGenerateColumns="False" Margin="10"
-                        materialDesign:DataGridAssist.CellPadding="4 2 2 2"
-                        materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">        
-                            <DataGrid.Columns >
-                                <DataGridTextColumn Header="Mã chất liệu" Binding="{Binding MaCL}" />
-                                <DataGridTextColumn Header="Tên chất liệu" Binding="{Binding Tenchatlieu}" />
-
-                            </DataGrid.Columns>
-                        </DataGrid>
                         
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" ItemsSource="{Binding chatlieulist}" 
+                                      AutoGenerateColumns="False" Margin="10"
+                                      materialDesign:DataGridAssist.CellPadding="4 2 2 2"
+                                      materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
+                                <DataGrid.Columns >
+                                    <DataGridTextColumn Header="Mã chất liệu" Binding="{Binding MaCL}" />
+                                    <DataGridTextColumn Header="Tên chất liệu" Binding="{Binding Tenchatlieu}" />
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Grid Grid.Row="1">
+                                <Button  Content="Thêm chất liệu" Height="30" Width="150" Background="#FF192537"
+HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Button_Click"/>
+                            </Grid>
+                        </Grid>
                     </TabItem>
                 </TabControl>
             </materialDesign:Card>

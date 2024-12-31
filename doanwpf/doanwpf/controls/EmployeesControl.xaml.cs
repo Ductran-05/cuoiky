@@ -35,7 +35,9 @@ namespace doanwpf
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddEmployee addEmployee = new AddEmployee();
-            addEmployee.Show();
+            addEmployee.EmployeesControl = this;
+            addEmployee.ShowDialog();
+            dgemployee.Items.Refresh();
         }
         void loadnhanviendata()
         {

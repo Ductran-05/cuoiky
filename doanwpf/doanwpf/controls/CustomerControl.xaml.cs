@@ -31,10 +31,12 @@ namespace doanwpf
             DataContext=this;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Addcustomer_Click(object sender, RoutedEventArgs e)
         {
             AddCustomer addCustomer = new AddCustomer();
-            addCustomer.Show();
+            addCustomer.customerControl = this;
+            addCustomer.ShowDialog();
+            dgcustomer.Items.Refresh();
         }
         void loadkhachhangdata()
         {

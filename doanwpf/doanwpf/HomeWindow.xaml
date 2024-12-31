@@ -13,7 +13,8 @@ TextOptions.TextRenderingMode="Auto"
 Background="White"
 FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="HomeWindow" Height="450" Width="800">
+        Title="HomeWindow" Height="450" Width="800"
+        WindowState="Maximized">
     <Window.Resources>
 
         <Style x:Key="split" TargetType="DataGridCell">

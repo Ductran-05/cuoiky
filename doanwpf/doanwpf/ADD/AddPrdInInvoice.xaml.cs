@@ -1,5 +1,7 @@
-﻿using System;
+﻿using doanwpf.MODEL;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,51 @@ namespace doanwpf.ADD
     /// </summary>
     public partial class AddPrdInInvoice : Window
     {
+        public AddInvoice AddInvoice { get; set; }
+        public AddImportInvoice AddImportInvoice { get; set; }
         public AddPrdInInvoice()
         {
             InitializeComponent();
+            loadsanphamdata();
+
+        }
+        void loadsanphamdata()
+        {
+            var masplist = new ObservableCollection<string>(
+                 dataprovider.Ins.DB.SANPHAMs.Select(nv => nv.MaSP).Distinct().ToList());
+            maspcbb.Items.Clear();
+            maspcbb.ItemsSource = masplist;
+           
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CTHOADON cTHOADON = new CTHOADON
+            {
+                MaHD =AutoGenerateMaHD(),
+                MaSP = maspcbb.Text,
+                Soluong=soluong.Value,
+                Dongia=double.Parse(dongiatxt.Text),
+                Giamgia=double.Parse(giamgiatxt.Text),
+                Thanhtien= double.Parse(dongiatxt.Text)*soluong.Value - double.Parse(giamgiatxt.Text),
+            };
+            if(AddInvoice != null )
+            {
+                AddInvoice.listcthd.Add(cTHOADON);
+            }
+            if (AddImportInvoice != null) { AddImportInvoice.listcthd.Add(cTHOADON); }
+        }
+        private string AutoGenerateMaHD()
+        {
+            var lastInvoice = dataprovider.Ins.DB.DONHANGs.OrderByDescending(sp => sp.MaHD).FirstOrDefault();
+            if (lastInvoice != null && int.TryParse(lastInvoice.MaHD.Replace("HD", ""), out int lastNumber))
+            {
+                return $"HD{lastNumber + 1:D3}";
+            }
+            else
+            {
+                return "HD001";
+            }
         }
     }
 }

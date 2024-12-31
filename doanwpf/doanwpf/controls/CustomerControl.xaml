@@ -22,7 +22,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Button  Content="Thêm khách hàng" Height="30" Width="150" Background="#FF192537"
-       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Button_Click" />
+       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Addcustomer_Click" />
             <Label HorizontalAlignment="Left" Content="Customers" VerticalAlignment="Center" Margin="20,20,20,20"
   FontFamily="Bahnschrift SemiLight Condensed" FontSize="24" Background="#FF192537" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" />
         </Grid>
@@ -48,7 +48,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                 </materialDesign:HintAssist.Hint>
                             </TextBox>
                             
-                            <DataGrid Grid.Row="1" ItemsSource="{Binding khachhanglist}" 
+                            <DataGrid x:Name="dgcustomer" Grid.Row="1" ItemsSource="{Binding khachhanglist}" 
 AutoGenerateColumns="False" Margin="10"
 materialDesign:DataGridAssist.CellPadding="4 2 2 2"
 materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">

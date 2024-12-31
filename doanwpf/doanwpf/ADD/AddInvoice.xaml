@@ -29,19 +29,19 @@ FontFamily="{DynamicResource MaterialDesignFont}"
             <Border Margin="20" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="White">
                 <ScrollViewer>
                     <StackPanel Margin="40" Background="White">
-                        <ComboBox Margin="20,0,20,0"
+                        <ComboBox Name="manvcbb" Margin="20,0,20,0"
                         MinWidth="72"
                         materialDesign:HintAssist.FontFamily="Verdana"
                         materialDesign:HintAssist.Hint="Mã nhân viên"
                         Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
                             <ComboBoxItem Content="op1"/>
                         </ComboBox>
-                        <DatePicker  HorizontalAlignment="Left" Margin="20,0,0,0"
+                        <DatePicker Name="date" HorizontalAlignment="Left" Margin="20,0,0,0"
                         Width="100"
                         materialDesign:HintAssist.Hint="Ngày hóa đơn"
                         materialDesign:TextFieldAssist.HasClearButton="True"
                         Style="{StaticResource MaterialDesignFloatingHintDatePicker}" FontSize="13" />
-                        <ComboBox Margin="20,0,20,0"
+                        <ComboBox Name="makhcbb" Margin="20,0,20,0"
                         MinWidth="72"
                         materialDesign:HintAssist.FontFamily="Verdana"
                         materialDesign:HintAssist.Hint="Mã khách hàng"
@@ -68,13 +68,14 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                         </Grid>
                         <Border Height="200"
                                 CornerRadius="50">
-                            <DataGrid  Margin="20,5,20,5" x:Name="ProductDataGrid" AutoGenerateColumns="False" CanUserAddRows="True">
+                            <DataGrid  Margin="20,5,20,5" x:Name="dgproductininvoice" AutoGenerateColumns="False" 
+                                       ItemsSource="{Binding listcthd}" CanUserAddRows="True">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="STT" Binding="{Binding Index}" Width="100" IsReadOnly="True"/>
-                                    <DataGridTextColumn Header="Tên Sản Phẩm" Binding="{Binding ProductName}" Width="*"/>
-                                    <DataGridTextColumn Header="Số Lượng" Binding="{Binding Quantity}" Width="100"/>
-                                    <DataGridTextColumn Header="Đơn Giá" Binding="{Binding UnitPrice}" Width="100"/>
-                                    <DataGridTextColumn Header="Thành Tiền" Binding="{Binding TotalPrice}" Width="100" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Mã sản phẩm" Binding="{Binding MaSP}" Width="*"/>
+                                    <DataGridTextColumn Header="Số Lượng" Binding="{Binding Soluong}" Width="100"/>
+                                    <DataGridTextColumn Header="Đơn Giá" Binding="{Binding Dongia}" Width="100"/>
+                                    <DataGridTextColumn Header="Giảm giá" Binding="{Binding Giamgia}" Width="100"/>
+                                    <DataGridTextColumn Header="Thành Tiền" Binding="{Binding Thanhtien}" Width="100" IsReadOnly="True"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Border>
@@ -90,7 +91,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
     materialDesign:ButtonAssist.CornerRadius="25"
     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click_1">
                     <TextBlock
       Text="Thêm" />
                 </Button>

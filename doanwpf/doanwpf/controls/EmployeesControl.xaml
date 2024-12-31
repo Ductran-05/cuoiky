@@ -48,7 +48,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                 </materialDesign:HintAssist.Hint>
                             </TextBox>
                             
-                            <DataGrid Grid.Row="1" ItemsSource="{Binding nhanvienlist}" 
+                            <DataGrid x:Name="dgemployee" Grid.Row="1" ItemsSource="{Binding nhanvienlist}" 
 AutoGenerateColumns="False" Margin="10"
 materialDesign:DataGridAssist.CellPadding="4 2 2 2"
 materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
