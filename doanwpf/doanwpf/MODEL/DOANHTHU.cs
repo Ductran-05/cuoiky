@@ -8,16 +8,10 @@ namespace doanwpf.MODEL
 {
     public class DoanhThu
     {
-        public decimal NhapHang { get; set; }
+        public double NhapHang { get; set; }
 
-        public decimal DonHang { get; set; }
-        public decimal LoiNhuan
-        {
-            get
-            {
-                return DonHang - NhapHang;
-            }
-        }
+        public double DonHang { get; set; }
+        public double LoiNhuan {  get; set; }
     }
 
 }

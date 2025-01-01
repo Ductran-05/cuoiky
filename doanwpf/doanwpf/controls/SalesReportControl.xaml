@@ -61,16 +61,16 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                     </StackPanel>
                                 </materialDesign:HintAssist.Hint>
                             </TextBox>
-                            
-                            <DataGrid Grid.Row="1" ItemsSource="{Binding nhaphanglist}" 
+
+                            <DataGrid Grid.Row="1" ItemsSource="{Binding doanhthu}" 
 AutoGenerateColumns="False" Margin="10"
 materialDesign:DataGridAssist.CellPadding="4 2 2 2"
 materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
 
                                 <DataGrid.Columns >
-                                    <DataGridTextColumn Header="Nhập hàng" Binding="{Binding MaHD}" />
-                                    <DataGridTextColumn Header="Doanh sô bán hàng" Binding="{Binding MaNV}" />
-                                    <DataGridTextColumn Header="Lợi nhuận" Binding="{Binding NgayHD}" />
+                                    <DataGridTextColumn Header="Nhập hàng" Binding="{Binding NhapHang}" />
+                                    <DataGridTextColumn Header="Doanh sô bán hàng" Binding="{Binding DonHang}" />
+                                    <DataGridTextColumn Header="Lợi nhuận" Binding="{Binding LoiNhuan}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                             
