@@ -18,6 +18,7 @@ namespace doanwpf.MODEL
         public SANPHAM()
         {
             this.CTHOADONs = new HashSet<CTHOADON>();
+            this.CTNHAPs = new HashSet<CTNHAP>();
         }
     
         public string MaSP { get; set; }
@@ -34,6 +35,8 @@ namespace doanwpf.MODEL
         public virtual CHATLIEU CHATLIEU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHOADON> CTHOADONs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTNHAP> CTNHAPs { get; set; }
         public virtual LOAISANPHAM LOAISANPHAM { get; set; }
         public virtual NHACUNGCAP NHACUNGCAP { get; set; }
     }

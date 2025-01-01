@@ -38,8 +38,8 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                 <RowDefinition/>
                                
                             </Grid.RowDefinitions>
-                            <TextBox Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
-                            Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                            <TextBox Name="sptxt" TextChanged="sptxt_TextChanged" Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
+Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                                 <materialDesign:HintAssist.Hint>
                                     <StackPanel Orientation="Horizontal" Width="140">
                                         <!-- Icon -->
@@ -90,7 +90,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                 <RowDefinition/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <DataGrid Grid.Row="0" ItemsSource="{Binding loaisanphamlist}" 
+                            <DataGrid x:Name="dgcatalog" Grid.Row="0" ItemsSource="{Binding loaisanphamlist}" 
                                         AutoGenerateColumns="False" Margin="10"
                                         materialDesign:DataGridAssist.CellPadding="4 2 2 2"
                                         materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
@@ -102,7 +102,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                             </DataGrid>
                             <Grid Grid.Row="1">
                                 <Button  Content="Thêm danh mục" Height="30" Width="150" Background="#FF192537"
-HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Button_Click"/>
+HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Addcatalog_Click"/>
                             </Grid>
                         </Grid>
                         
@@ -115,7 +115,7 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                                 <RowDefinition/>
                                 <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <DataGrid Grid.Row="0" ItemsSource="{Binding chatlieulist}" 
+                            <DataGrid x:Name="dgmateial" Grid.Row="0" ItemsSource="{Binding chatlieulist}" 
                                       AutoGenerateColumns="False" Margin="10"
                                       materialDesign:DataGridAssist.CellPadding="4 2 2 2"
                                       materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
@@ -127,7 +127,7 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                             </DataGrid>
                             <Grid Grid.Row="1">
                                 <Button  Content="Thêm chất liệu" Height="30" Width="150" Background="#FF192537"
-HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Button_Click"/>
+HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Addmaterial_Click"/>
                             </Grid>
                         </Grid>
                     </TabItem>

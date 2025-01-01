@@ -40,20 +40,46 @@ namespace doanwpf.ADD
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CTHOADON cTHOADON = new CTHOADON
-            {
-                MaHD =AutoGenerateMaHD(),
-                MaSP = maspcbb.Text,
-                Soluong=soluong.Value,
-                Dongia=double.Parse(dongiatxt.Text),
-                Giamgia=double.Parse(giamgiatxt.Text),
-                Thanhtien= double.Parse(dongiatxt.Text)*soluong.Value - double.Parse(giamgiatxt.Text),
-            };
+           
             if(AddInvoice != null )
             {
+                CTHOADON cTHOADON = new CTHOADON
+                {
+                    MaHD = AutoGenerateMaHD(),
+                    MaSP = maspcbb.Text,
+                    Soluong = soluong.Value,
+                    Dongia = double.Parse(dongiatxt.Text),
+                    Giamgia = double.Parse(giamgiatxt.Text),
+                    Thanhtien = double.Parse(dongiatxt.Text) * soluong.Value - double.Parse(giamgiatxt.Text),
+                };
                 AddInvoice.listcthd.Add(cTHOADON);
             }
-            if (AddImportInvoice != null) { AddImportInvoice.listcthd.Add(cTHOADON); }
+            if (AddImportInvoice != null) 
+            {
+                CTNHAP cTNHAP = new CTNHAP
+                {
+                    MaHD = AutoGenerateMaNH(),
+                    MaSP = maspcbb.Text,
+                    Soluong = soluong.Value,
+                    Dongia = double.Parse(dongiatxt.Text),
+                    Giamgia = double.Parse(giamgiatxt.Text),
+                    Thanhtien = double.Parse(dongiatxt.Text) * soluong.Value - double.Parse(giamgiatxt.Text),
+                };
+                AddImportInvoice.listctnhap.Add(cTNHAP); 
+            }
+            this.Close();
+        }
+        private string AutoGenerateMaNH()
+        {
+            var lastInvoice = dataprovider.Ins.DB.NHAPHANGs.OrderByDescending(sp => sp.MaHD).FirstOrDefault();
+            if (lastInvoice != null && int.TryParse(lastInvoice.MaHD.Replace("NH", ""), out int lastNumber))
+            {
+                return $"NH{lastNumber + 1:D3}";
+            }
+            else
+            {
+                return "NH001";
+            }
         }
         private string AutoGenerateMaHD()
         {

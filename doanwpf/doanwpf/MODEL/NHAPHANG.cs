@@ -14,12 +14,20 @@ namespace doanwpf.MODEL
     
     public partial class NHAPHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public NHAPHANG()
+        {
+            this.CTNHAPs = new HashSet<CTNHAP>();
+        }
+    
         public string MaHD { get; set; }
         public string MaNV { get; set; }
         public Nullable<System.DateTime> NgayHD { get; set; }
         public string MaNCC { get; set; }
         public Nullable<double> Trigia { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTNHAP> CTNHAPs { get; set; }
         public virtual NHACUNGCAP NHACUNGCAP { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
     }

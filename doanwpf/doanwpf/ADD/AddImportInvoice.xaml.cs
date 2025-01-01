@@ -22,7 +22,8 @@ namespace doanwpf.ADD
     /// 
     public partial class AddImportInvoice : Window
     {
-        public List<CTHOADON> listcthd = new List<CTHOADON>();
+        //public List<CTHOADON> listcthd = new List<CTHOADON>();
+        public List<CTNHAP> listctnhap = new List<CTNHAP>();
         public WarehouseControl WarehouseControl {  get; set; }
         public NHAPHANG nhaphangmoi { get; set; }
 
@@ -39,7 +40,7 @@ namespace doanwpf.ADD
             AddPrdInInvoice addPrdInInvoice = new AddPrdInInvoice();
             addPrdInInvoice.AddImportInvoice = this;
             addPrdInInvoice.ShowDialog();
-            dgproductininvoice.ItemsSource = listcthd;
+            dgproductininvoice.ItemsSource = listctnhap;
             dgproductininvoice.Items.Refresh();
         }
         void loadthongtinhoadon()
@@ -60,41 +61,39 @@ namespace doanwpf.ADD
             {
                 double trigiahoadon = 0;
 
-                foreach (var item in listcthd)
+                foreach (var item in listctnhap)
                 {
                     trigiahoadon = trigiahoadon + item.Thanhtien ?? 0 - item.Giamgia ?? 0;
                 }
                 nhaphangmoi = new NHAPHANG
                 {
-                    MaHD = listcthd[0].MaHD.Trim(),
-                    MaNV = manvcbb.Text.Trim(),
-                    NgayHD = date.SelectedDate,
-                    MaNCC = mancccbb.Text.Trim(),
-                    Trigia = trigiahoadon
+                    MaHD = listctnhap[0].MaHD,
+                    MaNV=manvcbb.Text,
+                    NgayHD=date.SelectedDate,
+                    MaNCC= mancccbb.Text,
+                    Trigia = trigiahoadon,
                 };
 
 
-                //try
-                //{
-                //    foreach (var item in listcthd)
-                //    {
-                //        dataprovider.Ins.DB.CTHOADONs.Add(item);
-                //    }
-                //    dataprovider.Ins.DB.NHAPHANGs.Add(nhaphangmoi);
-                //    dataprovider.Ins.DB.SaveChanges();
-                //    MessageBox.Show("Đơn nhập hàng đã được thêm thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                //}
-                //catch (Exception ex)
-                //{
-                //    // Hiển thị thông báo lỗi chi tiết
-                //    MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}\nChi tiết: {ex.InnerException?.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-                //}
-
-                if (nhaphangmoi != null)
+                try
                 {
-                    WarehouseControl.nhaphanglist.Add(nhaphangmoi);
+                    foreach (var item in listctnhap)
+                    {
+                        dataprovider.Ins.DB.CTNHAPs.Add(item);
+                    }
+                    dataprovider.Ins.DB.NHAPHANGs.Add(nhaphangmoi);
+                    dataprovider.Ins.DB.SaveChanges();
+                    MessageBox.Show("Đơn nhập hàng đã được thêm thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                WarehouseControl.dgimportinvoice.ItemsSource = listcthd;
+                catch (Exception ex)
+                {
+                    // Hiển thị thông báo lỗi chi tiết
+                    MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}\nChi tiết: {ex.InnerException?.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+
+                WarehouseControl.nhaphanglist.Add(nhaphangmoi);
+                WarehouseControl.dgimportinvoice.ItemsSource=WarehouseControl.nhaphanglist;
                 this.Close();
             }
             catch (Exception ex)

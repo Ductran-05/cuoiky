@@ -27,6 +27,7 @@ namespace doanwpf.MODEL
     
         public virtual DbSet<CHATLIEU> CHATLIEUx { get; set; }
         public virtual DbSet<CTHOADON> CTHOADONs { get; set; }
+        public virtual DbSet<CTNHAP> CTNHAPs { get; set; }
         public virtual DbSet<DONHANG> DONHANGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<LOAISANPHAM> LOAISANPHAMs { get; set; }
@@ -34,6 +35,7 @@ namespace doanwpf.MODEL
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHAPHANG> NHAPHANGs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THONGTINTAIKHOAN> THONGTINTAIKHOANs { get; set; }
     }
 }

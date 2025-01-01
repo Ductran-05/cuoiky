@@ -32,14 +32,14 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                         <RowDefinition Height="auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBox Grid.Row="0" Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    <TextBox x:Name="hdtxt" TextChanged="hdtxt_TextChanged" Grid.Row="0" Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                         <materialDesign:HintAssist.Hint>
                             <StackPanel Orientation="Horizontal" Width="140">
                                 <!-- Icon -->
                                 <materialDesign:PackIcon Kind="Magnify" />
                                 <!-- Context -->
-                                <TextBlock Text="Tìm hóa đơn" VerticalAlignment="Center" />
+                                <TextBlock Text="Tìm hóa đơn(ngay HD" VerticalAlignment="Center" />
                             </StackPanel>
                         </materialDesign:HintAssist.Hint>
                     </TextBox>

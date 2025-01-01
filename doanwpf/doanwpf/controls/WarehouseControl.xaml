@@ -34,7 +34,7 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBox Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            <TextBox x:Name="sptxt" TextChanged="sptxt_TextChanged" Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                                 <materialDesign:HintAssist.Hint>
                                     <StackPanel Orientation="Horizontal" Width="140">
@@ -46,7 +46,7 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                                 </materialDesign:HintAssist.Hint>
                             </TextBox>
 
-                            <DataGrid Grid.Row="1" ItemsSource="{Binding khosanphamlist}" 
+                            <DataGrid  x:Name="dgwarehouse" Grid.Row="1" ItemsSource="{Binding khosanphamlist}" 
  AutoGenerateColumns="False" Margin="10"
  materialDesign:DataGridAssist.CellPadding="4 2 2 2"
  materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
@@ -54,7 +54,7 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                                 <DataGrid.Columns >
                                     <DataGridTextColumn Header="Mã Sản Phẩm" Binding="{Binding MaSP}" />
                                     <DataGridTextColumn Header="Tên Sản Phẩm" Binding="{Binding TenSP}" />
-                                    <DataGridTextColumn Header="Tồn kho" Binding="{Binding TonKho}" />
+                                    <DataGridTextColumn Header="Tồn kho" Binding="{Binding Tonkho}" />
                                     <DataGridTextColumn Header="Size" Binding="{Binding Size}" />
                                     <DataGridTextColumn Header="Mã chất liệu" Binding="{Binding MaCL}" Width="*" />
                                 </DataGrid.Columns>
@@ -68,14 +68,14 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBox Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            <TextBox  x:Name="nhtxt" TextChanged="nhtxt_TextChanged" Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                                 <materialDesign:HintAssist.Hint>
                                     <StackPanel Orientation="Horizontal" Width="140">
                                         <!-- Icon -->
                                         <materialDesign:PackIcon Kind="Magnify" />
                                         <!-- Context -->
-                                        <TextBlock Text="Tìm hóa đơn" VerticalAlignment="Center" />
+                                        <TextBlock Text="Tìm hóa đơn(ngay HD)" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </materialDesign:HintAssist.Hint>
                             </TextBox>

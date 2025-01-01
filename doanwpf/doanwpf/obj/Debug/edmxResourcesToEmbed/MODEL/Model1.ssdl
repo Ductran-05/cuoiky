@@ -19,16 +19,18 @@
     <Property Name="Giamgia" Type="float" />
     <Property Name="Thanhtien" Type="float" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'file_database.dbo.CTNHAPHANG' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="CTNHAPHANG">
-          <Property Name="MaNH" Type="varchar" MaxLength="10" />
-          <Property Name="MaSP" Type="varchar" MaxLength="10" />
-          <Property Name="Soluong" Type="int" />
-          <Property Name="Dongia" Type="float" />
-          <Property Name="Giamgia" Type="float" />
-          <Property Name="Thanhtien" Type="float" />
-        </EntityType>-->
+  <EntityType Name="CTNHAP">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaHD" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaSP" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Soluong" Type="int" />
+    <Property Name="Dongia" Type="float" />
+    <Property Name="Giamgia" Type="float" />
+    <Property Name="Thanhtien" Type="float" />
+  </EntityType>
   <!--Errors Found During Generation:
 warning 6013: The table/view 'file_database.dbo.DOANHTHU' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="DOANHTHU">
@@ -108,6 +110,16 @@ warning 6013: The table/view 'file_database.dbo.DOANHTHU' does not have a primar
     <Property Name="MaCL" Type="varchar" MaxLength="10" />
     <Property Name="FilePath" Type="text" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="THONGTINTAIKHOAN">
     <Key>
       <PropertyRef Name="TenDangNhap" />
@@ -119,12 +131,6 @@ warning 6013: The table/view 'file_database.dbo.DOANHTHU' does not have a primar
     <Property Name="Ngaysinh" Type="date" Nullable="false" />
     <Property Name="Matkhau" Type="char" MaxLength="10" />
   </EntityType>
-  <!--Errors Found During Generation:
-error 6004: The table 'file_database.dbo.CTNHAPHANG' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__CTNHAPHANG__MaNH__5EBF139D" />-->
-  <!--Errors Found During Generation:
-error 6004: The table 'file_database.dbo.CTNHAPHANG' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__CTNHAPHANG__MaSP__5FB337D6" />-->
   <Association Name="FK_CTHOADON_DONHANG">
     <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
     <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
@@ -145,6 +151,30 @@ error 6004: The table 'file_database.dbo.CTNHAPHANG' is referenced by a relation
         <PropertyRef Name="MaSP" />
       </Principal>
       <Dependent Role="CTHOADON">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTNHAP_NHAPHANG">
+    <End Role="NHAPHANG" Type="Self.NHAPHANG" Multiplicity="1" />
+    <End Role="CTNHAP" Type="Self.CTNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAPHANG">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="CTNHAP">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTNHAP_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="CTNHAP" Type="Self.CTNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTNHAP">
         <PropertyRef Name="MaSP" />
       </Dependent>
     </ReferentialConstraint>
@@ -236,6 +266,7 @@ error 6004: The table 'file_database.dbo.CTNHAPHANG' is referenced by a relation
   <EntityContainer Name="file_databaseModelStoreContainer">
     <EntitySet Name="CHATLIEU" EntityType="Self.CHATLIEU" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHOADON" EntityType="Self.CTHOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTNHAP" EntityType="Self.CTNHAP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAISANPHAM" EntityType="Self.LOAISANPHAM" Schema="dbo" store:Type="Tables" />
@@ -243,6 +274,7 @@ error 6004: The table 'file_database.dbo.CTNHAPHANG' is referenced by a relation
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHAPHANG" EntityType="Self.NHAPHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="THONGTINTAIKHOAN" EntityType="Self.THONGTINTAIKHOAN" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CTHOADON_DONHANG" Association="Self.FK_CTHOADON_DONHANG">
       <End Role="DONHANG" EntitySet="DONHANG" />
@@ -251,6 +283,14 @@ error 6004: The table 'file_database.dbo.CTNHAPHANG' is referenced by a relation
     <AssociationSet Name="FK_CTHOADON_SANPHAM" Association="Self.FK_CTHOADON_SANPHAM">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CTHOADON" EntitySet="CTHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTNHAP_NHAPHANG" Association="Self.FK_CTNHAP_NHAPHANG">
+      <End Role="NHAPHANG" EntitySet="NHAPHANG" />
+      <End Role="CTNHAP" EntitySet="CTNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTNHAP_SANPHAM" Association="Self.FK_CTNHAP_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End Role="CTNHAP" EntitySet="CTNHAP" />
     </AssociationSet>
     <AssociationSet Name="FK_DONHANG_KHACHHANG" Association="Self.FK_DONHANG_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />

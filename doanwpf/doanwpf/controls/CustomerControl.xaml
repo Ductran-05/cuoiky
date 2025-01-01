@@ -36,7 +36,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBox Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            <TextBox Name="khtxt" TextChanged="khtxt_TextChanged" Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                                 <materialDesign:HintAssist.Hint>
                                     <StackPanel Orientation="Horizontal" Width="140">

@@ -1,0 +1,62 @@
+﻿<Window x:Class="doanwpf.ADD.AddMaterial"
+                                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:doanwpf"
+                        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+TextElement.FontWeight="Regular"
+TextElement.FontSize="13"
+TextOptions.TextFormattingMode="Ideal"
+TextOptions.TextRenderingMode="Auto"
+Background="White"
+FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="AddProduct" Height="450" Width="800">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF192537">
+            <Label  Margin="20,0,0,0" FontSize="20" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontFamily="Bahnschrift SemiLight Condensed">
+                Chất liệu
+            </Label>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Border Margin="20" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="White">
+                <ScrollViewer >
+                    <StackPanel Margin="40" Background="White">
+                        <TextBox x:Name="txtchatlieu" Margin="20,0,0,0" VerticalAlignment="Center"
+             materialDesign:HintAssist.Hint="Tên chất liệu"      
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Width="200" Height="50" Margin="10"
+    materialDesign:ButtonAssist.CornerRadius="25"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click">
+                    <TextBlock
+      Text="Thêm" />
+                </Button>
+                <Button Width="200" Height="50" Margin="10"
+materialDesign:ButtonAssist.CornerRadius="25"
+IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+Style="{StaticResource MaterialDesignRaisedDarkButton}"
+ToolTip="MaterialDesignRaisedDarkButton with Round Corners" >
+                    <TextBlock
+  Text="Hủy" />
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -68,11 +68,9 @@ materialDesign:DataGridAssist.CellPadding="4 2 2 2"
 materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
 
                                 <DataGrid.Columns >
-                                    <DataGridTextColumn Header="Mã nhập hàng" Binding="{Binding MaHD}" />
-                                    <DataGridTextColumn Header="Mã nhân viên" Binding="{Binding MaNV}" />
-                                    <DataGridTextColumn Header="Ngày nhập hàng" Binding="{Binding NgayHD}" />
-                                    <DataGridTextColumn Header="Mã nhà cung cấp" Binding="{Binding MaNCC}" />
-                                    <DataGridTextColumn Header="Trị giá" Binding="{Binding Trigia}" Width="*" />
+                                    <DataGridTextColumn Header="Nhập hàng" Binding="{Binding MaHD}" />
+                                    <DataGridTextColumn Header="Doanh sô bán hàng" Binding="{Binding MaNV}" />
+                                    <DataGridTextColumn Header="Lợi nhuận" Binding="{Binding NgayHD}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                             

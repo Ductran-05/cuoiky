@@ -22,11 +22,13 @@ namespace doanwpf
     /// </summary>
     public partial class SalesReportControl : UserControl
     {
-       
+        public DoanhThu DoanhThu { get; set; }
         public SalesReportControl()
         {
             InitializeComponent();
+
         }
+
 
     }
 }

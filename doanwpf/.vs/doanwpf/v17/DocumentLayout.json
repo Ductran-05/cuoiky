@@ -1,50 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\doancuoiky\\doanwpf\\",
+  "WorkspaceRootPath": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\model\\nhaphang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\model\\nhaphang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\onedrive\\documents\\cuoiky\\doanwpf\\doanwpf\\controls\\salesreportcontrol.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\salesreportcontrol.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\add\\addimportinvoice.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\add\\addimportinvoice.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\onedrive\\documents\\cuoiky\\doanwpf\\doanwpf\\controls\\customercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\customercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\add\\addinvoice.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\add\\addinvoice.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\onedrive\\documents\\cuoiky\\doanwpf\\doanwpf\\controls\\customercontrol.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\customercontrol.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\controls\\warehousecontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\warehousecontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\add\\addimportinvoice.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\add\\addimportinvoice.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\add\\addprdininvoice.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\add\\addprdininvoice.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\controls\\warehousecontrol.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\warehousecontrol.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\add\\addinvoice.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\add\\addinvoice.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\controls\\invoicecontrol.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\invoicecontrol.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\controls\\invoicecontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\invoicecontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\doancuoiky\\doanwpf\\doanwpf\\add\\addprdininvoice.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\add\\addprdininvoice.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|c:\\onedrive\\documents\\cuoiky\\doanwpf\\doanwpf\\controls\\salesreportcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{709FF9F1-C484-48FA-878E-6E0E7557B5EB}|doanwpf\\doanwpf.csproj|solutionrelative:doanwpf\\controls\\salesreportcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 188,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,161 +46,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NHAPHANG.cs",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\MODEL\\NHAPHANG.cs",
-              "RelativeDocumentMoniker": "doanwpf\\MODEL\\NHAPHANG.cs",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\MODEL\\NHAPHANG.cs",
-              "RelativeToolTip": "doanwpf\\MODEL\\NHAPHANG.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "CustomerControl.xaml.cs",
+              "DocumentMoniker": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\doanwpf\\controls\\CustomerControl.xaml.cs",
+              "RelativeDocumentMoniker": "doanwpf\\controls\\CustomerControl.xaml.cs",
+              "ToolTip": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\doanwpf\\controls\\CustomerControl.xaml.cs",
+              "RelativeToolTip": "doanwpf\\controls\\CustomerControl.xaml.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T19:36:59.822Z",
+              "WhenOpened": "2025-01-01T10:25:21.595Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WarehouseControl.xaml.cs",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\controls\\WarehouseControl.xaml.cs",
-              "RelativeDocumentMoniker": "doanwpf\\controls\\WarehouseControl.xaml.cs",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\controls\\WarehouseControl.xaml.cs",
-              "RelativeToolTip": "doanwpf\\controls\\WarehouseControl.xaml.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "CustomerControl.xaml",
+              "DocumentMoniker": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\doanwpf\\controls\\CustomerControl.xaml",
+              "RelativeDocumentMoniker": "doanwpf\\controls\\CustomerControl.xaml",
+              "ToolTip": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\doanwpf\\controls\\CustomerControl.xaml",
+              "RelativeToolTip": "doanwpf\\controls\\CustomerControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-01T10:25:17.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SalesReportControl.xaml.cs",
+              "DocumentMoniker": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\doanwpf\\controls\\SalesReportControl.xaml.cs",
+              "RelativeDocumentMoniker": "doanwpf\\controls\\SalesReportControl.xaml.cs",
+              "ToolTip": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\doanwpf\\controls\\SalesReportControl.xaml.cs",
+              "RelativeToolTip": "doanwpf\\controls\\SalesReportControl.xaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T19:16:13.22Z",
+              "WhenOpened": "2025-01-01T10:22:48.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "WarehouseControl.xaml",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\controls\\WarehouseControl.xaml",
-              "RelativeDocumentMoniker": "doanwpf\\controls\\WarehouseControl.xaml",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\controls\\WarehouseControl.xaml",
-              "RelativeToolTip": "doanwpf\\controls\\WarehouseControl.xaml",
+              "Title": "SalesReportControl.xaml",
+              "DocumentMoniker": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\doanwpf\\controls\\SalesReportControl.xaml",
+              "RelativeDocumentMoniker": "doanwpf\\controls\\SalesReportControl.xaml",
+              "ToolTip": "C:\\ONEDRIVE\\Documents\\cuoiky\\doanwpf\\doanwpf\\controls\\SalesReportControl.xaml",
+              "RelativeToolTip": "doanwpf\\controls\\SalesReportControl.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-31T19:16:01.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddInvoice.xaml.cs",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddInvoice.xaml.cs",
-              "RelativeDocumentMoniker": "doanwpf\\ADD\\AddInvoice.xaml.cs",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddInvoice.xaml.cs",
-              "RelativeToolTip": "doanwpf\\ADD\\AddInvoice.xaml.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAIwFgAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T18:58:52.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AddInvoice.xaml",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddInvoice.xaml",
-              "RelativeDocumentMoniker": "doanwpf\\ADD\\AddInvoice.xaml",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddInvoice.xaml",
-              "RelativeToolTip": "doanwpf\\ADD\\AddInvoice.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-31T18:58:49.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "InvoiceControl.xaml.cs",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\controls\\InvoiceControl.xaml.cs",
-              "RelativeDocumentMoniker": "doanwpf\\controls\\InvoiceControl.xaml.cs",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\controls\\InvoiceControl.xaml.cs",
-              "RelativeToolTip": "doanwpf\\controls\\InvoiceControl.xaml.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T18:45:43.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "InvoiceControl.xaml",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\controls\\InvoiceControl.xaml",
-              "RelativeDocumentMoniker": "doanwpf\\controls\\InvoiceControl.xaml",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\controls\\InvoiceControl.xaml",
-              "RelativeToolTip": "doanwpf\\controls\\InvoiceControl.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-31T17:08:13.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddPrdInInvoice.xaml.cs",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddPrdInInvoice.xaml.cs",
-              "RelativeDocumentMoniker": "doanwpf\\ADD\\AddPrdInInvoice.xaml.cs",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddPrdInInvoice.xaml.cs",
-              "RelativeToolTip": "doanwpf\\ADD\\AddPrdInInvoice.xaml.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAgwDcAAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T16:45:40.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AddPrdInInvoice.xaml",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddPrdInInvoice.xaml",
-              "RelativeDocumentMoniker": "doanwpf\\ADD\\AddPrdInInvoice.xaml",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddPrdInInvoice.xaml",
-              "RelativeToolTip": "doanwpf\\ADD\\AddPrdInInvoice.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-31T16:45:25.886Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "0558e5f4-3d89-462f-9c82-6813459c3970",
-        "Display": 0,
-        "X": 95,
-        "Y": 243,
-        "Width": 1241,
-        "Height": 582,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddImportInvoice.xaml.cs",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddImportInvoice.xaml.cs",
-              "RelativeDocumentMoniker": "doanwpf\\ADD\\AddImportInvoice.xaml.cs",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddImportInvoice.xaml.cs",
-              "RelativeToolTip": "doanwpf\\ADD\\AddImportInvoice.xaml.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAAwDUAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T18:58:38.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddImportInvoice.xaml",
-              "DocumentMoniker": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddImportInvoice.xaml",
-              "RelativeDocumentMoniker": "doanwpf\\ADD\\AddImportInvoice.xaml",
-              "ToolTip": "C:\\doancuoiky\\doanwpf\\doanwpf\\ADD\\AddImportInvoice.xaml",
-              "RelativeToolTip": "doanwpf\\ADD\\AddImportInvoice.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-31T18:58:12.122Z",
+              "WhenOpened": "2025-01-01T10:20:10.72Z",
               "EditorCaption": ""
             }
           ]
