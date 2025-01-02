@@ -77,6 +77,9 @@ namespace doanwpf
                 datathang();
             }
             else if(comboBox.SelectedItem.ToString().Equals(tatca.ToString()))
+            {
+                loaddata();
+            }
             dgdoanhthu.Items.Refresh();
         }
         void datanam()
@@ -142,17 +145,22 @@ namespace doanwpf
         {
             int? namGanNhat = donhanglist
                 .Where(p => p.NgayHD.HasValue)
-                .Max(p => p.NgayHD.Value.Month);
+                .Max(p => p.NgayHD.Value.Year);
 
             if (namGanNhat.HasValue)
             {
+                int? thangGanNhat = donhanglist
+                    .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Year == namGanNhat.Value)
+                    .Max(p => p.NgayHD.Value.Month);
 
-                var hoaDonNamGanNhat = donhanglist
-                    .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Month == namGanNhat.Value);
+                if (thangGanNhat.HasValue)
+                {
+                    var hoaDonThangGanNhat = donhanglist
+                        .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Year == namGanNhat.Value && p.NgayHD.Value.Month == thangGanNhat.Value);
 
-
-                double tongTriGia = hoaDonNamGanNhat.Sum(p => p.Trigia ?? 0);
-                return tongTriGia;
+                    double tongTriGia = hoaDonThangGanNhat.Sum(p => p.Trigia ?? 0);
+                    return tongTriGia;
+                }
             }
             return 0;
         }
@@ -160,17 +168,22 @@ namespace doanwpf
         {
             int? namGanNhat = nhaphanglist
                 .Where(p => p.NgayHD.HasValue)
-                .Max(p => p.NgayHD.Value.Month);
+                .Max(p => p.NgayHD.Value.Year);
 
             if (namGanNhat.HasValue)
             {
+                int? thangGanNhat = nhaphanglist
+                    .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Year == namGanNhat.Value)
+                    .Max(p => p.NgayHD.Value.Month);
 
-                var hoaDonNamGanNhat = nhaphanglist
-                    .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Month == namGanNhat.Value);
+                if (thangGanNhat.HasValue)
+                {
+                    var hoaDonThangGanNhat = nhaphanglist
+                        .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Year == namGanNhat.Value && p.NgayHD.Value.Month == thangGanNhat.Value);
 
-
-                double tongTriGia = hoaDonNamGanNhat.Sum(p => p.Trigia ?? 0);
-                return tongTriGia;
+                    double tongTriGia = hoaDonThangGanNhat.Sum(p => p.Trigia ?? 0);
+                    return tongTriGia;
+                }
             }
             return 0;
         }
