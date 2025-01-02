@@ -21,21 +21,40 @@ namespace doanwpf.controls
     /// </summary>
     public partial class CTNhap : Window
     {
+        private ObservableCollection<CTNHAP> _ctnhaplit;
+        public ObservableCollection<CTNHAP> ctnhaplit { get => _ctnhaplit; set { _ctnhaplit = value; } }
         public WarehouseControl WarehouseControl { get; set; }
-        private ObservableCollection<CTNHAP> _ctnhaplist;
-        public ObservableCollection<CTNHAP> ctnhaplist { get => _ctnhaplist; set { _ctnhaplist = value; } }
         public CTNhap()
         {
             InitializeComponent();
         }
 
+
+
         private void dgproductininvoice_Loaded(object sender, RoutedEventArgs e)
         {
-            var selectedinvoice = WarehouseControl.dgimportinvoice.SelectedItem as NHAPHANG;
-            if (selectedinvoice != null)
+            var selected = WarehouseControl.dgimportinvoice.SelectedItem as NHAPHANG;
+            if (selected != null)
             {
-                ctnhaplist = new ObservableCollection<CTNHAP>(dataprovider.Ins.DB.CTNHAPs.Where(p => p.MaHD == selectedinvoice.MaHD).ToList());
+                ctnhaplit = new ObservableCollection<CTNHAP>(dataprovider.Ins.DB.CTNHAPs.Where(p => p.MaHD == selected.MaHD));
+                dgproductininvoice.ItemsSource = ctnhaplit;
             }
         }
+        //public WarehouseControl WarehouseControl { get; set; }
+        //private ObservableCollection<CTNHAP> _ctnhaplist;
+        //public ObservableCollection<CTNHAP> ctnhaplist { get => _ctnhaplist; set { _ctnhaplist = value; } }
+        //public CTNhap()
+        //{
+        //    InitializeComponent();
+        //}
+
+        //private void dgproductininvoice_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    var selectedinvoice = WarehouseControl.dgimportinvoice.SelectedItem as NHAPHANG;
+        //    if (selectedinvoice != null)
+        //    {
+        //        ctnhaplist = new ObservableCollection<CTNHAP>(dataprovider.Ins.DB.CTNHAPs.Where(p => p.MaHD == selectedinvoice.MaHD).ToList());
+        //    }
+        //}
     }
 }

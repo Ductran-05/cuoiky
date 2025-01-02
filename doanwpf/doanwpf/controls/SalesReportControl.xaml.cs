@@ -56,12 +56,12 @@ namespace doanwpf
         }
         double getnhaphang()
         {
-            return donhanglist.Sum(ct => ct.Trigia ?? 0);
+            return nhaphanglist.Sum(ct => ct.Trigia ?? 0);
         }
 
         double getdonhang()
         {
-            return nhaphanglist.Sum(ct => ct.Trigia ?? 0);
+            return donhanglist.Sum(ct => ct.Trigia ?? 0);
         }
 
         private void filter_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -86,8 +86,8 @@ namespace doanwpf
         {
             DoanhThu = new DoanhThu
             {
-                NhapHang = tinhTongTriGiaNamGanNhat(),
-                DonHang = tinhtongnhap(),
+                DonHang = tinhTongTriGiaNamGanNhat(),
+                NhapHang = tinhtongnhap(),
                 LoiNhuan = tinhTongTriGiaNamGanNhat() - tinhtongnhap()
             };
             doanhthu.Clear();
@@ -98,8 +98,8 @@ namespace doanwpf
         {
             DoanhThu = new DoanhThu
             {
-                NhapHang = tinhTongTriGiaThangGanNhat(),
-                DonHang = tinhtongnhapthang(),
+                DonHang = tinhTongTriGiaThangGanNhat(),
+                NhapHang = tinhtongnhapthang(),
                 LoiNhuan = tinhTongTriGiaThangGanNhat() - tinhtongnhapthang()
             };
             doanhthu.Clear();

@@ -113,6 +113,8 @@ namespace doanwpf.ADD
 
                 InvoiceControl.donhanglist.Add(donhangmoi);
                 InvoiceControl.dginvoice.ItemsSource=InvoiceControl.donhanglist;
+                WarehouseControl warehouseControl = new WarehouseControl();
+                warehouseControl.dgwarehouse.Items.Refresh();
                 this.Close();
             }
             catch (Exception ex)

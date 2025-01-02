@@ -15,11 +15,10 @@ FontFamily="{DynamicResource MaterialDesignFont}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <ProgressBar IsIndeterminate="True" VerticalAlignment="Top"/>
-            <Image Source="/controls/indigo.png">
-               
-            </Image>
-        </StackPanel>
+        <Image Name="slideshowImage" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" 
+               Stretch="Uniform"
+               Opacity="1" />
     </Grid>
 </UserControl>

@@ -177,7 +177,10 @@ namespace doanwpf
 
                     dataprovider.Ins.DB.SANPHAMs.Remove(sanpham);
                 }
-                dataprovider.Ins.DB.LOAISANPHAMs.Remove(loaisanpham);
+                if(loaisanpham != null)
+                {
+                    dataprovider.Ins.DB.LOAISANPHAMs.Remove(loaisanpham);
+                }
 
                 dataprovider.Ins.DB.SaveChanges();
                 dgcatalog.ItemsSource = dataprovider.Ins.DB.LOAISANPHAMs.ToList();

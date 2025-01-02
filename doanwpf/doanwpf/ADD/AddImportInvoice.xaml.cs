@@ -108,6 +108,7 @@ namespace doanwpf.ADD
                     }
                     dataprovider.Ins.DB.NHAPHANGs.Add(nhaphangmoi);
                     dataprovider.Ins.DB.SaveChanges();
+                    WarehouseControl.dgwarehouse.Items.Refresh();
                 }
                 catch (Exception ex)
                 {

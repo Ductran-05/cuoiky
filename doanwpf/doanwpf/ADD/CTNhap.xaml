@@ -31,7 +31,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                     <Border 
                      CornerRadius="50">
                         <DataGrid  Margin="20,5,20,5" x:Name="dgproductininvoice" AutoGenerateColumns="False" 
-                            ItemsSource="{Binding cthdlist}" CanUserAddRows="True" Loaded="dgproductininvoice_Loaded">
+                            ItemsSource="{Binding ctnhaplist}" CanUserAddRows="True" Loaded="dgproductininvoice_Loaded">
                             <DataGrid.Columns>
                                 <DataGridTextColumn x:Name="mahd" Header="Mã hóa đơn" Binding="{Binding MaHD}" Width="*"/>
                                 <DataGridTextColumn x:Name="masp" Header="Mã sản phẩm" Binding="{Binding MaSP}" Width="*"/>
