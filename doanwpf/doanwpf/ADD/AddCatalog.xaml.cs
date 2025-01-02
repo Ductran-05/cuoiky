@@ -32,6 +32,13 @@ namespace doanwpf.ADD
         {
             try
             {
+                #region
+                if (string.IsNullOrWhiteSpace(txtloaisp.Text))
+                {
+                    MessageBox.Show("Tên loại sản phẩm không được để trống.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                #endregion
                 loaisanphammoi = new LOAISANPHAM
                 {
                     Maloai= AutoGenerateMaLSP(),
@@ -72,6 +79,11 @@ namespace doanwpf.ADD
             {
                 return "LSP001";
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

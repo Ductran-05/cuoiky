@@ -30,6 +30,7 @@ namespace doanwpf
         public ObservableCollection<LOAISANPHAM> loaisanphamlist { get => _loaisanphamlist;set { _loaisanphamlist= value; } }
         private ObservableCollection<CHATLIEU> _chatlieulist;
         public ObservableCollection<CHATLIEU> chatlieulist { get => _chatlieulist; set { _chatlieulist = value; } }
+
         public ProductsControl()
         {
             InitializeComponent();
@@ -126,6 +127,91 @@ namespace doanwpf
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
+        private void xoa_Click(object sender, RoutedEventArgs e)
+        {
+            var result= MessageBox.Show("Mọi thứ liên quan tới sản phẩm này sẽ bị xóa!","Cảnh báo",MessageBoxButton.OKCancel,MessageBoxImage.Warning);
+            if (result == MessageBoxResult.OK)
+            {
+                SANPHAM sanpham = dgproduct.SelectedItem as SANPHAM;
 
+                var cthdlist = dataprovider.Ins.DB.CTHOADONs.Where(p => p.MaSP == sanpham.MaSP).ToList();
+                foreach (var cthd in cthdlist)
+                {
+                    dataprovider.Ins.DB.CTHOADONs.Remove(cthd);
+                }
+
+                var ctnhaplist = dataprovider.Ins.DB.CTNHAPs.Where(p => p.MaSP == sanpham.MaSP).ToList();
+                foreach (var ctnhap in ctnhaplist)
+                {
+                    dataprovider.Ins.DB.CTNHAPs.Remove(ctnhap);
+                }
+
+                dataprovider.Ins.DB.SANPHAMs.Remove(sanpham);
+
+                dataprovider.Ins.DB.SaveChanges();
+                dgproduct.ItemsSource = dataprovider.Ins.DB.SANPHAMs.ToList();
+                dgproduct.Items.Refresh();
+            }
+        }
+
+        private void xoadanhmuc_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Mọi thứ liên quan tới loại sản phẩm này sẽ bị xóa!", "Cảnh báo", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.OK)
+            {
+                LOAISANPHAM loaisanpham = dgcatalog.SelectedItem as LOAISANPHAM;
+                var sanphamlist = dataprovider.Ins.DB.SANPHAMs.Where(p => p.MaLoai == loaisanpham.Maloai);
+                foreach( var sanpham in sanphamlist)
+                {
+                    var cthdlist = dataprovider.Ins.DB.CTHOADONs.Where(p => p.MaSP == sanpham.MaSP).ToList();
+                    foreach (var cthd in cthdlist)
+                    {
+                        dataprovider.Ins.DB.CTHOADONs.Remove(cthd);
+                    }
+
+                    var ctnhaplist = dataprovider.Ins.DB.CTNHAPs.Where(p => p.MaSP == sanpham.MaSP).ToList();
+                    foreach (var ctnhap in ctnhaplist)
+                    {
+                        dataprovider.Ins.DB.CTNHAPs.Remove(ctnhap);
+                    }
+
+                    dataprovider.Ins.DB.SANPHAMs.Remove(sanpham);
+                }
+                dataprovider.Ins.DB.LOAISANPHAMs.Remove(loaisanpham);
+
+                dataprovider.Ins.DB.SaveChanges();
+                dgcatalog.ItemsSource = dataprovider.Ins.DB.LOAISANPHAMs.ToList();
+            }
+        }
+
+        private void xoachatlieu_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Mọi thứ liên quan tới chất liệu này sẽ bị xóa!", "Cảnh báo", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.OK)
+            {
+                CHATLIEU chatlieu = dgmateial.SelectedItem as CHATLIEU;
+                var sanphamlist = dataprovider.Ins.DB.SANPHAMs.Where(p => p.MaCL == chatlieu.MaCL);
+                foreach (var sanpham in sanphamlist)
+                {
+                    var cthdlist = dataprovider.Ins.DB.CTHOADONs.Where(p => p.MaSP == sanpham.MaSP).ToList();
+                    foreach (var cthd in cthdlist)
+                    {
+                        dataprovider.Ins.DB.CTHOADONs.Remove(cthd);
+                    }
+
+                    var ctnhaplist = dataprovider.Ins.DB.CTNHAPs.Where(p => p.MaSP == sanpham.MaSP).ToList();
+                    foreach (var ctnhap in ctnhaplist)
+                    {
+                        dataprovider.Ins.DB.CTNHAPs.Remove(ctnhap);
+                    }
+
+                    dataprovider.Ins.DB.SANPHAMs.Remove(sanpham);
+                }
+                dataprovider.Ins.DB.CHATLIEUx.Remove(chatlieu);
+
+                dataprovider.Ins.DB.SaveChanges();
+                dgmateial.ItemsSource = dataprovider.Ins.DB.CHATLIEUx.ToList();
+            }
+        }
     }
 }

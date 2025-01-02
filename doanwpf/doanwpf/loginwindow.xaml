@@ -17,7 +17,7 @@
     <Grid>
 
         <Grid.Background>
-            <ImageBrush ImageSource="Resources/pngtree-closet-full-of-and-shoes-image_2967716.jpg"/>
+            <ImageBrush ImageSource="Resources/b.jpg"/>
         </Grid.Background>
         <Grid Height="250" Width="400">
             <Grid.Background>
@@ -66,7 +66,7 @@
     materialDesign:ButtonAssist.CornerRadius="15"
     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click_1">
                         <TextBlock
       Text="Exit"/>
                     </Button>

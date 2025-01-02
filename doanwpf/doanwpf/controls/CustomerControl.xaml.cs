@@ -1,4 +1,6 @@
-﻿using doanwpf.MODEL;
+﻿using doanwpf.ADD;
+using doanwpf.MODEL;
+using doanwpf.REPAIR;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,6 +39,18 @@ namespace doanwpf
             AddCustomer addCustomer = new AddCustomer();
             addCustomer.customerControl = this;
             addCustomer.ShowDialog();
+            dgcustomer.Items.Refresh();
+        }
+        private void Repair_Click(object sender, RoutedEventArgs e)
+        {
+            RepairCustomer repairCustomer = new RepairCustomer();
+            var selectedCustomer = dgcustomer.SelectedItem as KHACHHANG;
+            if(selectedCustomer != null)
+            {
+                repairCustomer.DataContext = selectedCustomer;
+            }
+            repairCustomer.CustomerControl = this;
+            repairCustomer.ShowDialog();
             dgcustomer.Items.Refresh();
         }
         void loadkhachhangdata()
@@ -84,6 +98,30 @@ namespace doanwpf
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
+        private void xoa_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Mọi thứ liên quan tới khách hàng này sẽ bị xóa!", "Cảnh báo", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.OK)
+            {
+                KHACHHANG khachhang = dgcustomer.SelectedItem as KHACHHANG;
 
+                var donhanglist = dataprovider.Ins.DB.DONHANGs.Where(p => p.MaKH == khachhang.MaKH).ToList();
+                foreach (var donhang in donhanglist)
+                {
+                    var cthdlist = dataprovider.Ins.DB.CTHOADONs.Where(p => p.MaHD == donhang.MaHD).ToList();
+                    foreach (var cthd in cthdlist)
+                    {
+                        dataprovider.Ins.DB.CTHOADONs.Remove(cthd);
+                    }
+                    dataprovider.Ins.DB.DONHANGs.Remove(donhang);
+                }
+
+                dataprovider.Ins.DB.KHACHHANGs.Remove(khachhang);
+
+                dataprovider.Ins.DB.SaveChanges();
+                dgcustomer.ItemsSource=dataprovider.Ins.DB.KHACHHANGs.ToList();
+                dgcustomer.Items.Refresh();
+            }
+        }
     }
 }

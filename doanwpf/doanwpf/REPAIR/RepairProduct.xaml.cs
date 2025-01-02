@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace doanwpf
     /// </summary>
     public partial class RepairProduct : Window
     {
+        public SANPHAM SANPHAM { get; set; }
         public ProductsControl ProductsControl { get; set; }
         public RepairProduct()
         {
@@ -44,6 +46,7 @@ namespace doanwpf
         }
         void loadsanphamdata()
         {
+            
             var maloaiList = new ObservableCollection<string>(
                  dataprovider.Ins.DB.SANPHAMs.Select(sp => sp.MaLoai).Distinct().ToList());
             maloaicbb.ItemsSource = maloaiList;
@@ -57,9 +60,88 @@ namespace doanwpf
                 dataprovider.Ins.DB.SANPHAMs.Select(sp => sp.MaCL).Distinct().ToList());
             maclcbb.ItemsSource = macllist;
         }
-        private void add_click(object sender, RoutedEventArgs e)
+        private void repair_click(object sender, RoutedEventArgs e)
         {
 
+            try
+            {
+                if (ProductsControl != null)
+                { MessageBox.Show("hello"); }
+                else
+                { MessageBox.Show("null"); }
+                #region
+                if (string.IsNullOrWhiteSpace(tensptxt.Text))
+                {
+                    MessageBox.Show("Tên sản phẩm không được để trống.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(maloaicbb.Text))
+                {
+                    MessageBox.Show("Mã loại không được để trống.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(mancccbb.Text))
+                {
+                    MessageBox.Show("Mã nhà cung cấp không được để trống.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (!double.TryParse(giabantxt.Text, out double giaban) || giaban < 0)
+                {
+                    MessageBox.Show("Giá bán phải là số dương.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (!double.TryParse(giagoctxt.Text, out double giagoc) || giagoc < 0)
+                {
+                    MessageBox.Show("Giá gốc phải là số dương.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(maclcbb.Text))
+                {
+                    MessageBox.Show("Mã chất liệu không được để trống.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (SelectedImage.Source == null)
+                {
+                    MessageBox.Show("Bạn phải chọn một hình ảnh.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                #endregion
+                SANPHAM = ProductsControl.dgproduct.SelectedItem as SANPHAM;
+                try
+                {
+                    capnhat(dataprovider.Ins.DB.SANPHAMs.FirstOrDefault(p => p.MaSP == SANPHAM.MaSP) as SANPHAM);
+                    dataprovider.Ins.DB.SaveChanges();
+
+                }
+                catch (Exception ex)
+                {
+                    // Hiển thị thông báo lỗi chi tiết
+                    MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}\nChi tiết: {ex.InnerException?.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                ProductsControl.dgproduct.Items.Refresh();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+            }
+        }
+
+        void capnhat(SANPHAM sp)
+        {
+            sp.TenSP = tensptxt.Text;
+            sp.MaLoai = maloaicbb.Text;
+            sp.MaNCC = mancccbb.Text;
+            sp.Giaban = double.Parse(giabantxt.Text);
+            sp.Giagoc = double.Parse(giagoctxt.Text);
+            sp.MaCL = maclcbb.Text;
+            sp.FilePath = SelectedImage.Source.ToString();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

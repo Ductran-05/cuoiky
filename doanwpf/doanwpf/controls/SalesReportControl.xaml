@@ -45,22 +45,12 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                         <TextBlock Text="Bộ lọc" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </materialDesign:HintAssist.Hint>
-                                <ComboBoxItem Content="Năm" />
+                                <ComboBoxItem Content="Năm"/>
                                 <ComboBoxItem Content="Tháng" />
                                 <ComboBoxItem Content="Tuần" />
                                 <ComboBoxItem Content="Ngày" />
                             </ComboBox>
-                            <TextBox Grid.Row="0" Margin="10,0,0,0" Height="30" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}">
-                                <materialDesign:HintAssist.Hint>
-                                    <StackPanel Orientation="Horizontal" Width="140">
-                                        <!-- Icon -->
-                                        <materialDesign:PackIcon Kind="Magnify" />
-                                        <!-- Context -->
-                                        <TextBlock Text="Tìm sản phẩm" VerticalAlignment="Center" />
-                                    </StackPanel>
-                                </materialDesign:HintAssist.Hint>
-                            </TextBox>
+                           
 
                             <DataGrid Grid.Row="1" ItemsSource="{Binding doanhthu}" 
 AutoGenerateColumns="False" Margin="10"

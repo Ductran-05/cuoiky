@@ -19,12 +19,49 @@ namespace doanwpf.MODEL
             : base("name=file_databaseEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            try
+            {
+                // Thiết lập Cascade Delete cho NHANVIEN và DONHANG
+                modelBuilder.Entity<DONHANG>()
+                    .HasRequired(dh => dh.NHANVIEN)
+                    .WithMany(nv => nv.DONHANGs)
+                    .HasForeignKey(dh => dh.MaNV)
+                    .WillCascadeOnDelete(true); // Kích hoạt Cascade Delete
+
+                // Thiết lập Cascade Delete cho NHANVIEN và NHAPHANG
+                modelBuilder.Entity<NHAPHANG>()
+                    .HasRequired(nh => nh.NHANVIEN)
+                    .WithMany(nv => nv.NHAPHANGs)
+                    .HasForeignKey(nh => nh.MaNV)
+                    .WillCascadeOnDelete(true); // Kích hoạt Cascade Delete
+
+                // Thiết lập Cascade Delete cho DONHANG và CTHOADON
+                modelBuilder.Entity<CTHOADON>()
+                    .HasRequired(ct => ct.DONHANG)
+                    .WithMany(dh => dh.CTHOADONs)
+                    .HasForeignKey(ct => ct.MaHD)
+                    .WillCascadeOnDelete(true);
+
+                // Thiết lập Cascade Delete cho NHAPHANG và CTNHAP
+                modelBuilder.Entity<CTNHAP>()
+                    .HasRequired(ct => ct.NHAPHANG)
+                    .WithMany(nh => nh.CTNHAPs)
+                    .HasForeignKey(ct => ct.MaHD)
+                    .WillCascadeOnDelete(true);
+
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi hoặc xử lý exception ở đây
+                Console.WriteLine("Có lỗi xảy ra: " + ex.Message);
+            }
         }
-    
+
+
+
         public virtual DbSet<CHATLIEU> CHATLIEUx { get; set; }
         public virtual DbSet<CTHOADON> CTHOADONs { get; set; }
         public virtual DbSet<CTNHAP> CTNHAPs { get; set; }

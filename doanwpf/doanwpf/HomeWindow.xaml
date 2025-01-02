@@ -167,8 +167,8 @@ materialDesign:MenuAssist.TopLevelMenuItemHeight="30">
                     </MenuItem.Header>
                     <MenuItem
               Header="Thông tin tài khoản" Click="MenuItem_Click_2"/>
-                    <MenuItem
-              Header="Đăng xuất"/>
+                    <MenuItem Name="logout"
+              Header="Đăng xuất" Click="logout_Click"/>
                 </MenuItem>
             </Menu>
 

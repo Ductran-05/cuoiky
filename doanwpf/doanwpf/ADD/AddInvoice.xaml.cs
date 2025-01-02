@@ -41,7 +41,8 @@ namespace doanwpf.ADD
         }
         void loadthongtinhoadon()
         {
-            var manvlist = new ObservableCollection<string>(
+            
+                var manvlist = new ObservableCollection<string>(
                  dataprovider.Ins.DB.NHANVIENs.Select(nv => nv.MaNV).Distinct().ToList());
             manvcbb.Items.Clear();
             manvcbb.ItemsSource = manvlist;
@@ -55,6 +56,31 @@ namespace doanwpf.ADD
         {
             try
             {
+                #region Kiểm tra dữ liệu đầu vào
+                if (string.IsNullOrWhiteSpace(manvcbb.Text))
+                {
+                    MessageBox.Show("Vui lòng chọn mã nhân viên.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(makhcbb.Text))
+                {
+                    MessageBox.Show("Vui lòng chọn mã khách hàng.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (!date.SelectedDate.HasValue)
+                {
+                    MessageBox.Show("Vui lòng chọn ngày hóa đơn.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (listcthd == null || listcthd.Count == 0)
+                {
+                    MessageBox.Show("Danh sách sản phẩm không được để trống.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                #endregion
                 double trigiahoadon = 0;
 
                 foreach ( var item in listcthd)
@@ -78,7 +104,6 @@ namespace doanwpf.ADD
                     }
                     dataprovider.Ins.DB.DONHANGs.Add(donhangmoi);
                     dataprovider.Ins.DB.SaveChanges();
-                    MessageBox.Show("Sản phẩm đã được thêm thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
                 {
@@ -95,6 +120,10 @@ namespace doanwpf.ADD
                 MessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
-        
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

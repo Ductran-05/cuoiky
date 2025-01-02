@@ -28,7 +28,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
             <Border Margin="20" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="White">
                 <ScrollViewer>
                     <StackPanel Margin="40" Background="White">
-                        <TextBox Margin="20,0,20,0" VerticalAlignment="Center"
+                        <TextBox x:Name="tensptxt" Margin="20,0,20,0" VerticalAlignment="Center"
                                  Text="{Binding TenSP}"
                                   materialDesign:HintAssist.Hint="Tên sản phẩm"      
                                   Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
@@ -64,11 +64,11 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                     materialDesign:HintAssist.Hint="Mã chất liệu"
                                     Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
                         </ComboBox>
-                        <TextBox Margin="20,0,0,0"
+                        <TextBox x:Name="giabantxt" Margin="20,0,0,0"
                                  Text="{Binding Giaban}"
                                  materialDesign:HintAssist.Hint="Giá bán" 
                                  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
-                        <TextBox Margin="20,0,0,0" 
+                        <TextBox x:Name="giagoctxt" Margin="20,0,0,0" 
                                  Text="{Binding Giagoc}"
                                  VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="Giá vốn" 
@@ -89,19 +89,19 @@ FontFamily="{DynamicResource MaterialDesignFont}"
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button Width="200" Height="50" Margin="10"
+                <Button x:Name="repair" Width="200" Height="50" Margin="10"
     materialDesign:ButtonAssist.CornerRadius="25"
     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="add_click">
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="repair_click">
                     <TextBlock
       Text="Cập nhật" />
                 </Button>
-                <Button Width="200" Height="50" Margin="10"
+                <Button  Width="200" Height="50" Margin="10"
 materialDesign:ButtonAssist.CornerRadius="25"
 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
 Style="{StaticResource MaterialDesignRaisedDarkButton}"
-ToolTip="MaterialDesignRaisedDarkButton with Round Corners" >
+ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click" >
                     <TextBlock
   Text="Hủy" />
                 </Button>

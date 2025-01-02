@@ -1,5 +1,6 @@
 ﻿using doanwpf.ADD;
 using doanwpf.MODEL;
+using doanwpf.REPAIR;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -39,6 +40,17 @@ namespace doanwpf
             addEmployee.EmployeesControl = this;
             addEmployee.ShowDialog();
             dgemployee.Items.Refresh();
+        }
+        private void Repair_Click(object sender, RoutedEventArgs e)
+        {
+            RepairEmployee repairEmployee = new RepairEmployee();
+            var selectedemployee = dgemployee.SelectedItem as NHANVIEN;
+            if (selectedemployee != null)
+            {
+                repairEmployee.DataContext = selectedemployee;
+            }
+            repairEmployee.EmployeesControl = this;
+            repairEmployee.ShowDialog();
         }
         void loadnhanviendata()
         {
@@ -85,5 +97,41 @@ namespace doanwpf
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
+        private void xoa_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Mọi thứ liên quan tới nhân viên này sẽ bị xóa!", "Cảnh báo", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.OK)
+            {
+                NHANVIEN nhanvien = dgemployee.SelectedItem as NHANVIEN;
+
+                var donhanglist = dataprovider.Ins.DB.DONHANGs.Where(p => p.MaNV == nhanvien.MaNV).ToList();
+                foreach (var donhang in donhanglist)
+                {
+                    var cthdlist = dataprovider.Ins.DB.CTHOADONs.Where(p => p.MaHD == donhang.MaHD).ToList();
+                    foreach (var cthd in cthdlist)
+                    {
+                        dataprovider.Ins.DB.CTHOADONs.Remove(cthd);
+                    }
+                    dataprovider.Ins.DB.DONHANGs.Remove(donhang);
+                }
+
+                var nhaphanglist = dataprovider.Ins.DB.NHAPHANGs.Where(p => p.MaNV == nhanvien.MaNV).ToList();
+                foreach (var donhang in nhaphanglist)
+                {
+                    var ctnhaplist = dataprovider.Ins.DB.CTNHAPs.Where(p => p.MaHD == donhang.MaHD).ToList();
+                    foreach (var ctnhap in ctnhaplist)
+                    {
+                        dataprovider.Ins.DB.CTNHAPs.Remove(ctnhap);
+                    }
+                    dataprovider.Ins.DB.NHAPHANGs.Remove(donhang);
+                }
+
+                dataprovider.Ins.DB.NHANVIENs.Remove(nhanvien);
+
+                dataprovider.Ins.DB.SaveChanges();
+                dgemployee.ItemsSource = dataprovider.Ins.DB.NHANVIENs.ToList();
+                dgemployee.Items.Refresh();
+            }
+        }
     }
 }

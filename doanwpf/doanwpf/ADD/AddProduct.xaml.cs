@@ -29,6 +29,7 @@ namespace doanwpf
         {
             InitializeComponent();
             loadsanphamdata();
+            
             DataContext = this;
         }
         private void OnSelectImageClicked(object sender, RoutedEventArgs e)
@@ -71,6 +72,21 @@ namespace doanwpf
         {
             try
             {
+                #region
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    MessageBox.Show("Please select an image for the product.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txttensp.Text) ||
+                    string.IsNullOrWhiteSpace(txtgiaban.Text) ||
+                    string.IsNullOrWhiteSpace(txtgiagoc.Text))
+                {
+                    MessageBox.Show("Please fill all required fields (Product Name, Sale Price, Cost Price).", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                #endregion
                 sanphammoi = new SANPHAM
                 {
                     MaSP = AutoGenerateMaSP(),
@@ -86,14 +102,6 @@ namespace doanwpf
                 };
               
 
-                if (!dataprovider.Ins.DB.LOAISANPHAMs.Any(l => l.Maloai.Trim() == sanphammoi.MaLoai.Trim()) ||
-            !dataprovider.Ins.DB.NHACUNGCAPs.Any(n => n.MaNCC.Trim() == sanphammoi.MaNCC.Trim()) ||
-            !dataprovider.Ins.DB.CHATLIEUx.Any(c => c.MaCL.Trim() == sanphammoi.MaCL.Trim()))
-                {
-                    MessageBox.Show("Mã loại, nhà cung cấp, hoặc chất liệu không tồn tại!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-
                 string filename = Path.GetFileName(sanphammoi.FilePath.Trim());
                 string projectDirectory =Directory.GetCurrentDirectory();
                 string destinationDirectory = Path.Combine(projectDirectory, "imagesource");
@@ -105,10 +113,9 @@ namespace doanwpf
                 File.Copy(filePath, destinationpath, true);
 
                 try
-                {
+                {   
                     dataprovider.Ins.DB.SANPHAMs.Add(sanphammoi);
                     dataprovider.Ins.DB.SaveChanges();
-                    MessageBox.Show("Sản phẩm đã được thêm thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
                 {
@@ -139,6 +146,9 @@ namespace doanwpf
             }
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

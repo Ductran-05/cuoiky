@@ -53,32 +53,37 @@ VerticalAlignment="Center"/>
 VerticalAlignment="Center"/>
                 <Label Grid.Row="4" Grid.Column="0" Content="Ngày sinh" HorizontalAlignment="Right"
 VerticalAlignment="Center"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="15" Text="{Binding SelectedAccount.TenDangNhap}"
-                         x:Name="CommentTextBox" 
+                <TextBox x:Name="tendangnhap" Grid.Row="0" Grid.Column="1" Margin="15" Text="{Binding SelectedAccount.TenDangNhap}"
                          materialDesign:HintAssist.HelperTextFontSize="16" />
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="15" Text="{Binding SelectedAccount.Ten}"
+                <TextBox x:Name="ten" Grid.Row="1" Grid.Column="1" Margin="15" Text="{Binding SelectedAccount.Ten}"
          materialDesign:HintAssist.HelperTextFontSize="16" />
-                <TextBox Grid.Row="2" Grid.Column="1" Margin="15" Text="{Binding SelectedAccount.SDT}"
+                <TextBox x:Name="sodienthoai" Grid.Row="2" Grid.Column="1" Margin="15" Text="{Binding SelectedAccount.SDT}"
          materialDesign:HintAssist.HelperTextFontSize="16"  />
                 <StackPanel Grid.Row="3" Grid.Column="1"  Orientation="Horizontal">
-                    <RadioButton GroupName="1" Content="Nam" IsChecked="{Binding SelectedAccount.Gioitinh,
+                    <RadioButton x:Name="rbnam" GroupName="1" Content="Nam" IsChecked="{Binding SelectedAccount.Gioitinh,
                         Converter={StaticResource GenderConverter},ConverterParameter=Nam,Mode=TwoWay}"
                          Margin="20,0,20,0"/>
-                    <RadioButton GroupName="1" Content="Nữ" IsChecked="{Binding SelectedAccount.Gioitinh,
+                    <RadioButton x:Name="rbnu" GroupName="1" Content="Nữ" IsChecked="{Binding SelectedAccount.Gioitinh,
                         Converter={StaticResource GenderConverter},ConverterParameter=Nữ,Mode=TwoWay}"/>
                 </StackPanel>
 
-                <TextBox Grid.Row="4" Grid.Column="1" Margin="15" Text="{Binding SelectedAccount.Ngaysinh}"
-         materialDesign:HintAssist.HelperTextFontSize="16" />
+                <DatePicker Name="date" Grid.Row="4" Grid.Column="1"
+            Text="{Binding SelectedAccount.Ngaysinh}"
+            HorizontalAlignment="Left" Margin="20,10,15,10"
+              Width="100"
+              materialDesign:HintAssist.Hint="Ngày sinh"
+              materialDesign:TextFieldAssist.HasClearButton="True"
+              Style="{StaticResource MaterialDesignFloatingHintDatePicker}" FontSize="13" />
+
             </Grid>
             
         </Border>
 
         <Grid Grid.Row="2">
-            <Button   Width="100" materialDesign:ButtonAssist.CornerRadius="15"
+            <Button x:Name="save" Margin="10"  Width="100" materialDesign:ButtonAssist.CornerRadius="15"
     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
     Style="{StaticResource MaterialDesignRaisedDarkButton}"
-    ToolTip="MaterialDesignRaisedDarkButton with Round Corners">
+    ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="save_Click">
                 <TextBlock
       Text="Lưu" />
             </Button>

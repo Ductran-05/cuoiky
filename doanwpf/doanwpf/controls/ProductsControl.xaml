@@ -58,7 +58,7 @@ Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                                 <DataGrid.ContextMenu>
                                     <ContextMenu x:Name="DataGridContextMenu">
                                         <MenuItem Header="Chỉnh sửa" Click="Repair_Click"/>
-                                        <MenuItem Header="Xóa" />
+                                        <MenuItem Name="xoa" Header="Xóa" Click="xoa_Click"/>
                                     </ContextMenu>
                                 </DataGrid.ContextMenu>
                                 <DataGrid.Columns>
@@ -94,6 +94,11 @@ Style="{StaticResource MaterialDesignFloatingHintTextBox}">
                                         AutoGenerateColumns="False" Margin="10"
                                         materialDesign:DataGridAssist.CellPadding="4 2 2 2"
                                         materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
+                                <DataGrid.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Name="xoadanhmuc" Header="Xóa" Click="xoadanhmuc_Click"/>
+                                    </ContextMenu>
+                                </DataGrid.ContextMenu>
                                 <DataGrid.Columns >
                                     <DataGridTextColumn Header="Mã loại Sản Phẩm" Binding="{Binding Maloai}" />
                                     <DataGridTextColumn Header="Tên loại Sản Phẩm" Binding="{Binding TenLSP}" />
@@ -119,6 +124,11 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                                       AutoGenerateColumns="False" Margin="10"
                                       materialDesign:DataGridAssist.CellPadding="4 2 2 2"
                                       materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
+                                <DataGrid.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Name="xoachatlieu" Header="Xóa" Click="xoachatlieu_Click"/>
+                                    </ContextMenu>
+                                </DataGrid.ContextMenu>
                                 <DataGrid.Columns >
                                     <DataGridTextColumn Header="Mã chất liệu" Binding="{Binding MaCL}" />
                                     <DataGridTextColumn Header="Tên chất liệu" Binding="{Binding Tenchatlieu}" />

@@ -1,5 +1,6 @@
 ﻿using doanwpf.ADD;
 using doanwpf.MODEL;
+using doanwpf.REPAIR;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -38,6 +39,17 @@ namespace doanwpf
            AddProvider addProvider = new AddProvider(); 
            addProvider.ProviderControl = this;
            addProvider.Show();
+        }
+        private void Repair_Click(object sender, RoutedEventArgs e)
+        {
+            RepairProvider repairProvider = new RepairProvider();
+            var selectedprovider = dgprovider.SelectedItem as NHACUNGCAP;
+            if(selectedprovider != null)
+            {
+                repairProvider.DataContext = selectedprovider;
+            }
+            repairProvider.ProviderControl=this;
+            repairProvider.ShowDialog();
         }
         void loadnhacungcapdata()
         {
@@ -84,5 +96,30 @@ namespace doanwpf
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
+        private void xoa_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Mọi thứ liên quan tới nhà cung cấp này sẽ bị xóa!", "Cảnh báo", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.OK)
+            {
+                NHACUNGCAP ncc = dgprovider.SelectedItem as NHACUNGCAP;
+
+                var nhaphanglist = dataprovider.Ins.DB.NHAPHANGs.Where(p => p.MaNCC == ncc.MaNCC).ToList();
+                foreach (var donhang in nhaphanglist)
+                {
+                    var ctnhaplist = dataprovider.Ins.DB.CTNHAPs.Where(p => p.MaHD == donhang.MaHD).ToList();
+                    foreach (var ctnhap in ctnhaplist)
+                    {
+                        dataprovider.Ins.DB.CTNHAPs.Remove(ctnhap);
+                    }
+                    dataprovider.Ins.DB.NHAPHANGs.Remove(donhang);
+                }
+
+                dataprovider.Ins.DB.NHACUNGCAPs.Remove(ncc);
+
+                dataprovider.Ins.DB.SaveChanges();
+                dgprovider.ItemsSource = dataprovider.Ins.DB.NHACUNGCAPs.ToList();
+                dgprovider.Items.Refresh();
+            }
+        }
     }
 }

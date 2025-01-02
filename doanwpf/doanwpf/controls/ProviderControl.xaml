@@ -52,11 +52,16 @@ FontFamily="{DynamicResource MaterialDesignFont}"
 AutoGenerateColumns="False" Margin="10"
 materialDesign:DataGridAssist.CellPadding="4 2 2 2"
 materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
-
+                                <DataGrid.ContextMenu>
+                                    <ContextMenu x:Name="DataGridContextMenu">
+                                        <MenuItem Header="Chỉnh sửa" Click="Repair_Click"/>
+                                        <MenuItem Name="xoa" Header="Xóa" Click="xoa_Click"/>
+                                    </ContextMenu>
+                                </DataGrid.ContextMenu>
                                 <DataGrid.Columns >
-                                    <DataGridTextColumn Header="Mã nhà cung cấp" Binding="{Binding MaNCC}" />
-                                    <DataGridTextColumn Header="Tên nhà cung cáp" Binding="{Binding TenNCC}" />
-                                    <DataGridTextColumn Header="Số điện thoại" Binding="{Binding SDT}" Width="*" />
+                                    <DataGridTextColumn x:Name="mancctxt" Header="Mã nhà cung cấp" Binding="{Binding MaNCC}" />
+                                    <DataGridTextColumn x:Name="tenncctxt" Header="Tên nhà cung cáp" Binding="{Binding TenNCC}" />
+                                    <DataGridTextColumn x:Name="phonenum" Header="Số điện thoại" Binding="{Binding SDT}" Width="*" />
                                 </DataGrid.Columns>
                             </DataGrid>
                             

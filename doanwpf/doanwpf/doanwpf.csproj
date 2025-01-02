@@ -103,6 +103,12 @@
     <Compile Include="ADD\AddProvider.xaml.cs">
       <DependentUpon>AddProvider.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ADD\CTHDwindow.xaml.cs">
+      <DependentUpon>CTHDwindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ADD\CTNhap.xaml.cs">
+      <DependentUpon>CTNhap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="controls\CustomerControl.xaml.cs">
       <DependentUpon>CustomerControl.xaml</DependentUpon>
     </Compile>
@@ -186,8 +192,17 @@
     <Compile Include="MODEL\THONGTINTAIKHOAN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="REPAIR\RepairCustomer.xaml.cs">
+      <DependentUpon>RepairCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="REPAIR\RepairEmployee.xaml.cs">
+      <DependentUpon>RepairEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="REPAIR\RepairProduct.xaml.cs">
       <DependentUpon>RepairProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="REPAIR\RepairProvider.xaml.cs">
+      <DependentUpon>RepairProvider.xaml</DependentUpon>
     </Compile>
     <Page Include="ADD\AddCatalog.xaml">
       <SubType>Designer</SubType>
@@ -222,6 +237,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ADD\AddProvider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADD\CTHDwindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADD\CTNhap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -284,7 +307,19 @@
       <DependentUpon>loginwindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="REPAIR\RepairCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="REPAIR\RepairEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="REPAIR\RepairProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="REPAIR\RepairProvider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -307,6 +342,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EntityDeploy Include="MODEL\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -325,7 +361,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\pngtree-closet-full-of-and-shoes-image_2967716.jpg" />
+    <Resource Include="Resources\b.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -334,6 +370,8 @@
     <Resource Include="Resources\A.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="controls\download.jpg" />
+    <Resource Include="controls\indigo.png" />
     <Content Include="MODEL\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using doanwpf.ADD;
+using doanwpf.controls;
 using doanwpf.MODEL;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,8 @@ namespace doanwpf
     {
         private ObservableCollection<DONHANG> _donhanglist;
         public ObservableCollection<DONHANG> donhanglist { get => _donhanglist; set { _donhanglist = value; } }
+        
+
         public InvoiceControl()
         {
             InitializeComponent();
@@ -38,6 +41,19 @@ namespace doanwpf
             AddInvoice addInvoice = new AddInvoice();
             addInvoice.InvoiceControl = this;
             addInvoice.ShowDialog();
+
+        }
+        private void opendetail_Click(object sender, RoutedEventArgs e)
+        {
+            CTHDwindow cTHDwindow = new CTHDwindow();
+            //var selectedinvoice = dginvoice.SelectedItem as DONHANG;
+            cTHDwindow.InvoiceControl = this; // Gán form cha cho form con
+            //if (selectedinvoice != null)
+            //{
+            //    cthdlist = new ObservableCollection<CTHOADON>(dataprovider.Ins.DB.CTHOADONs.ToList());
+            //    cTHDwindow.DataContext = cthdlist;
+            //}
+            cTHDwindow.ShowDialog();
 
         }
         void loaddonhangdata()
@@ -86,5 +102,6 @@ namespace doanwpf
             return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
+       
     }
 }

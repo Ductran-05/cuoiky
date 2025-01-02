@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,7 +46,36 @@ namespace doanwpf
             SelectedAccount = dataprovider.Ins.DB.THONGTINTAIKHOANs
             .FirstOrDefault(taikhoan => taikhoan.TenDangNhap == App.username && taikhoan.Matkhau == App.password);
         }
-       
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                try
+                {
+                    capnhat(SelectedAccount);
+                    dataprovider.Ins.DB.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    // Hiển thị thông báo lỗi chi tiết
+                    MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}\nChi tiết: {ex.InnerException?.Message}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+            }
+        }
+        void capnhat(THONGTINTAIKHOAN tk)
+        {
+            tk.TenDangNhap = tendangnhap.Text;
+            tk.Ten = ten.Text;
+            tk.Gioitinh = rbnam.IsChecked == true ? "Nam" : "Nữ";
+            tk.Ngaysinh = date.SelectedDate ?? default;
+            tk.SDT = sodienthoai.Text;
+        }
     }
     public class GenderConverter : IValueConverter
     {

@@ -1,4 +1,5 @@
 ﻿using doanwpf.ADD;
+using doanwpf.controls;
 using doanwpf.MODEL;
 using System;
 using System.Collections.Generic;
@@ -128,6 +129,13 @@ namespace doanwpf
                 var filteredProducts = khosanphamlist.Where(p => RemoveDiacritics(p.TenSP.ToLower()).Contains(searchText)).ToList();
                 dgwarehouse.ItemsSource = filteredProducts;  // Hiển thị danh sách đã lọc
             }
+        }
+
+        private void opendetail_Click(object sender, RoutedEventArgs e)
+        {
+            CTNhap cTNhap = new CTNhap();
+            cTNhap.WarehouseControl = this;
+            cTNhap.Show();
         }
     }
 }

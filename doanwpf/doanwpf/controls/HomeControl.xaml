@@ -15,6 +15,11 @@ FontFamily="{DynamicResource MaterialDesignFont}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label>home</Label>
+        <StackPanel>
+            <ProgressBar IsIndeterminate="True" VerticalAlignment="Top"/>
+            <Image Source="/controls/indigo.png">
+               
+            </Image>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,6 +33,19 @@ namespace doanwpf.ADD
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txttenncc.Text) || string.IsNullOrWhiteSpace(phonenumber.Text))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                // Validate phone number format (example: simple validation for numeric characters)
+                if (!Regex.IsMatch(phonenumber.Text, @"^\d{10,15}$"))
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ! Vui lòng nhập số điện thoại đúng.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 nhacungcapmoi = new NHACUNGCAP
                 {
                     MaNCC = AutoGenerateMaNCC(),
@@ -72,6 +86,11 @@ namespace doanwpf.ADD
             {
                 return "NCC001";
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

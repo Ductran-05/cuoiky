@@ -1,0 +1,50 @@
+﻿<Window x:Class="doanwpf.controls.CTNhap"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:doanwpf.controls"
+                                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+TextElement.FontWeight="Regular"
+TextElement.FontSize="13"
+TextOptions.TextFormattingMode="Ideal"
+TextOptions.TextRenderingMode="Auto"
+Background="White"
+FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="Detail" Height="450" Width="800">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF192537">
+            <Label  Margin="20,0,0,0" FontSize="20" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontFamily="Bahnschrift SemiLight Condensed">
+                Chi tiết hóa đơn
+            </Label>
+
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Border Margin="20" CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="White">
+                <ScrollViewer>
+                    <Border 
+                     CornerRadius="50">
+                        <DataGrid  Margin="20,5,20,5" x:Name="dgproductininvoice" AutoGenerateColumns="False" 
+                            ItemsSource="{Binding cthdlist}" CanUserAddRows="True" Loaded="dgproductininvoice_Loaded">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn x:Name="mahd" Header="Mã hóa đơn" Binding="{Binding MaHD}" Width="*"/>
+                                <DataGridTextColumn x:Name="masp" Header="Mã sản phẩm" Binding="{Binding MaSP}" Width="*"/>
+                                <DataGridTextColumn x:Name="soluong" Header="Số Lượng" Binding="{Binding Soluong}" Width="100"/>
+                                <DataGridTextColumn x:Name="dongia" Header="Đơn Giá" Binding="{Binding Dongia}" Width="100"/>
+                                <DataGridTextColumn x:Name="giamgia" Header="Giảm giá" Binding="{Binding Giamgia}" Width="100"/>
+                                <DataGridTextColumn x:Name="thanhtien" Header="Thành Tiền" Binding="{Binding Thanhtien}" Width="100" IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+                </ScrollViewer>
+            </Border>
+
+        </Grid>
+    </Grid>
+</Window>

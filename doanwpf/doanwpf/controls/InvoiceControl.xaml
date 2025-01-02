@@ -47,7 +47,11 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
 AutoGenerateColumns="False" Margin="10"
 materialDesign:DataGridAssist.CellPadding="4 2 2 2"
 materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
-
+                        <DataGrid.ContextMenu>
+                            <ContextMenu x:Name="DataGridContextMenu">
+                                <MenuItem Name="opendetail" Header="Xem chi tiết" Click="opendetail_Click"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
                         <DataGrid.Columns >
                             <DataGridTextColumn Header="Mã hóa đơn" Binding="{Binding MaHD}" />
                             <DataGridTextColumn Header="Mã nhân viên" Binding="{Binding MaNV}" />

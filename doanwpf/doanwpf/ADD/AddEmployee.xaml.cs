@@ -108,5 +108,10 @@ namespace doanwpf.ADD
                 return "NV001";
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -59,6 +59,31 @@ namespace doanwpf.ADD
         {
             try
             {
+                #region Kiểm tra dữ liệu đầu vào
+                if (string.IsNullOrWhiteSpace(manvcbb.Text))
+                {
+                    MessageBox.Show("Vui lòng chọn mã nhân viên.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(mancccbb.Text))
+                {
+                    MessageBox.Show("Vui lòng chọn mã nhà cung cấp.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (!date.SelectedDate.HasValue)
+                {
+                    MessageBox.Show("Vui lòng chọn ngày hóa đơn.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (listctnhap == null || listctnhap.Count == 0)
+                {
+                    MessageBox.Show("Danh sách sản phẩm nhập không được để trống.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                #endregion
                 double trigiahoadon = 0;
 
                 foreach (var item in listctnhap)
@@ -83,7 +108,6 @@ namespace doanwpf.ADD
                     }
                     dataprovider.Ins.DB.NHAPHANGs.Add(nhaphangmoi);
                     dataprovider.Ins.DB.SaveChanges();
-                    MessageBox.Show("Đơn nhập hàng đã được thêm thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex)
                 {
@@ -100,6 +124,11 @@ namespace doanwpf.ADD
             {
                 MessageBox.Show($"Lỗi: {ex.Message}");
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

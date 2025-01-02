@@ -94,6 +94,11 @@ namespace doanwpf
             infoAccount.Show();
         }
 
-        
+        private void logout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow loginwindow = new MainWindow();
+            loginwindow.Show();
+            this.Close();
+        }
     }
 }

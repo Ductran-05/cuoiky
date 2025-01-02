@@ -14,7 +14,7 @@ TextOptions.TextRenderingMode="Auto"
 Background="White"
 FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="AddProduct" Height="450" Width="800">
+        Title="AddCustomer" Height="450" Width="800">
     <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" >
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -73,7 +73,7 @@ Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="13" />
 materialDesign:ButtonAssist.CornerRadius="25"
 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
 Style="{StaticResource MaterialDesignRaisedDarkButton}"
-ToolTip="MaterialDesignRaisedDarkButton with Round Corners" >
+ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click" >
                     <TextBlock
   Text="Hủy" />
                 </Button>

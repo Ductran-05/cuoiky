@@ -296,3 +296,13 @@ C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\doanwpf.exe
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\doanwpf.pdb
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\ADD\AddMaterial.g.cs
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\ADD\AddMaterial.baml
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\REPAIR\RepairCustomer.g.cs
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\REPAIR\RepairCustomer.baml
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\REPAIR\RepairEmployee.g.cs
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\REPAIR\RepairEmployee.baml
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\REPAIR\RepairProvider.g.cs
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\REPAIR\RepairProvider.baml
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\ADD\CTHDwindow.g.cs
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\ADD\CTNhap.g.cs
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\ADD\CTHDwindow.baml
+C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\ADD\CTNhap.baml

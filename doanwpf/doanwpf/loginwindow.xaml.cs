@@ -43,7 +43,8 @@ namespace doanwpf
             {
                 this.Hide();
                 HomeWindow homeWindow = new HomeWindow();
-                homeWindow.Show();
+                homeWindow.ShowDialog();
+                
             }
         }
         private bool Login()
@@ -55,6 +56,11 @@ namespace doanwpf
 
                 return true;
             else return false;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current?.Shutdown();
         }
     }
 }
