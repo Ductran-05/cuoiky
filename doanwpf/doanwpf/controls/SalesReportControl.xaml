@@ -34,7 +34,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <ComboBox Grid.Row="0" HorizontalAlignment="Right" Margin="10"
+                            <ComboBox Name="filter" SelectionChanged="filter_SelectionChanged" Grid.Row="0" HorizontalAlignment="Right" Margin="10"
   Width="150" 
   Style="{StaticResource MaterialDesignOutlinedComboBox}" Height="35" BorderThickness="1,1,1,1" Padding="0">
                                 <materialDesign:HintAssist.Hint>
@@ -45,14 +45,13 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                         <TextBlock Text="Bộ lọc" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </materialDesign:HintAssist.Hint>
-                                <ComboBoxItem Content="Năm"/>
-                                <ComboBoxItem Content="Tháng" />
-                                <ComboBoxItem Content="Tuần" />
-                                <ComboBoxItem Content="Ngày" />
+                                <ComboBoxItem Name="nam" Content="Năm"/>
+                                <ComboBoxItem Name="thang" Content="Tháng" />
+                                <ComboBoxItem Name="tatca" Content="Tất cả" />
                             </ComboBox>
                            
 
-                            <DataGrid Grid.Row="1" ItemsSource="{Binding doanhthu}" 
+                            <DataGrid x:Name="dgdoanhthu" Grid.Row="1" ItemsSource="{Binding doanhthu}" 
 AutoGenerateColumns="False" Margin="10"
 materialDesign:DataGridAssist.CellPadding="4 2 2 2"
 materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">

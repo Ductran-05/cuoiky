@@ -23,41 +23,156 @@ namespace doanwpf
     /// </summary>
     public partial class SalesReportControl : UserControl
     {
-        private ObservableCollection<CTHOADON> _cthdlist;
-        public ObservableCollection<CTHOADON> cthdlist { get => _cthdlist; set { _cthdlist = value; } }
-        private ObservableCollection<CTNHAP> _ctnhaplist;
-        public ObservableCollection<CTNHAP> ctnhaplist { get => _ctnhaplist; set { _ctnhaplist = value; } }
+        private ObservableCollection<DONHANG> _donhanglist;
+        public ObservableCollection<DONHANG> donhanglist { get => _donhanglist; set { _donhanglist = value; } }
+        private ObservableCollection<NHAPHANG> _nhaphanglist;
+        public ObservableCollection<NHAPHANG> nhaphanglist { get => _nhaphanglist; set { _nhaphanglist = value; } }
         private ObservableCollection<DoanhThu> _doanhthu;
         public ObservableCollection<DoanhThu> doanhthu { get => _doanhthu; set { _doanhthu = value; } }
         public DoanhThu DoanhThu { get; set; }
         public SalesReportControl()
         {
             InitializeComponent();
+            doanhthu = new ObservableCollection<DoanhThu>();
+
+            donhanglist = new ObservableCollection<DONHANG>(dataprovider.Ins.DB.DONHANGs.ToList());
+            nhaphanglist = new ObservableCollection<NHAPHANG>(dataprovider.Ins.DB.NHAPHANGs.ToList());
             loaddata(); // Gọi trước
             DataContext = this;
         }
 
         void loaddata()
         {
-            cthdlist = new ObservableCollection<CTHOADON>(dataprovider.Ins.DB.CTHOADONs.ToList());
-            ctnhaplist = new ObservableCollection<CTNHAP>(dataprovider.Ins.DB.CTNHAPs.ToList());
+            
             DoanhThu = new DoanhThu
             {
                 NhapHang = getnhaphang(),
                 DonHang = getdonhang(),
                 LoiNhuan = getdonhang() - getnhaphang()
             };
-            doanhthu = new ObservableCollection<DoanhThu>();
+            doanhthu.Clear();
             doanhthu.Add(DoanhThu);
+
         }
         double getnhaphang()
         {
-            return ctnhaplist.Sum(ct => ct.Thanhtien ?? 0);
+            return donhanglist.Sum(ct => ct.Trigia ?? 0);
         }
 
         double getdonhang()
         {
-            return cthdlist.Sum(ct => ct.Thanhtien ?? 0);
+            return nhaphanglist.Sum(ct => ct.Trigia ?? 0);
+        }
+
+        private void filter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if(comboBox.SelectedItem.ToString().Equals(nam.ToString()))
+            {
+                datanam();
+                
+            }
+            else if(comboBox.SelectedItem.ToString().Equals(thang.ToString()))
+            {
+                datathang();
+            }
+            else if(comboBox.SelectedItem.ToString().Equals(tatca.ToString()))
+            dgdoanhthu.Items.Refresh();
+        }
+        void datanam()
+        {
+            DoanhThu = new DoanhThu
+            {
+                NhapHang = tinhTongTriGiaNamGanNhat(),
+                DonHang = tinhtongnhap(),
+                LoiNhuan = tinhTongTriGiaNamGanNhat() - tinhtongnhap()
+            };
+            doanhthu.Clear();
+            doanhthu.Add(DoanhThu);
+            
+        }
+        void datathang()
+        {
+            DoanhThu = new DoanhThu
+            {
+                NhapHang = tinhTongTriGiaThangGanNhat(),
+                DonHang = tinhtongnhapthang(),
+                LoiNhuan = tinhTongTriGiaThangGanNhat() - tinhtongnhapthang()
+            };
+            doanhthu.Clear();
+            doanhthu.Add(DoanhThu);
+        }
+        double tinhTongTriGiaNamGanNhat()
+        {
+            int? namGanNhat = donhanglist
+                .Where(p => p.NgayHD.HasValue) 
+                .Max(p => p.NgayHD.Value.Year); 
+
+            if (namGanNhat.HasValue)
+            {
+              
+                var hoaDonNamGanNhat = donhanglist
+                    .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Year == namGanNhat.Value);
+
+              
+                double tongTriGia = hoaDonNamGanNhat.Sum(p => p.Trigia ?? 0);
+                return tongTriGia;
+            }
+            return 0;
+        }
+        double tinhtongnhap()
+        {
+            int? namGanNhat = nhaphanglist
+                .Where(p => p.NgayHD.HasValue)
+                .Max(p => p.NgayHD.Value.Year);
+
+            if (namGanNhat.HasValue)
+            {
+
+                var hoaDonNamGanNhat = nhaphanglist
+                    .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Year == namGanNhat.Value);
+
+
+                double tongTriGia = hoaDonNamGanNhat.Sum(p => p.Trigia ?? 0);
+                return tongTriGia;
+            }
+            return 0;
+        }
+        double tinhTongTriGiaThangGanNhat()
+        {
+            int? namGanNhat = donhanglist
+                .Where(p => p.NgayHD.HasValue)
+                .Max(p => p.NgayHD.Value.Month);
+
+            if (namGanNhat.HasValue)
+            {
+
+                var hoaDonNamGanNhat = donhanglist
+                    .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Month == namGanNhat.Value);
+
+
+                double tongTriGia = hoaDonNamGanNhat.Sum(p => p.Trigia ?? 0);
+                return tongTriGia;
+            }
+            return 0;
+        }
+        double tinhtongnhapthang()
+        {
+            int? namGanNhat = nhaphanglist
+                .Where(p => p.NgayHD.HasValue)
+                .Max(p => p.NgayHD.Value.Month);
+
+            if (namGanNhat.HasValue)
+            {
+
+                var hoaDonNamGanNhat = nhaphanglist
+                    .Where(p => p.NgayHD.HasValue && p.NgayHD.Value.Month == namGanNhat.Value);
+
+
+                double tongTriGia = hoaDonNamGanNhat.Sum(p => p.Trigia ?? 0);
+                return tongTriGia;
+            }
+            return 0;
         }
     }
 }
