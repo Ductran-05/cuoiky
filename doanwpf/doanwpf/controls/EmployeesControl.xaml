@@ -64,7 +64,7 @@ materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
                                     <DataGridTextColumn Header="Giới tính" Binding="{Binding Gioitinh}" />
                                     <DataGridTextColumn Header="Địa chỉ" Binding="{Binding Diachi}" />
                                     <DataGridTextColumn Header="Số điện thoại" Binding="{Binding Dienthoai}" />
-                                    <DataGridTextColumn Header="Ngày sinh" Binding="{Binding Ngaysinh}" Width="*" />
+                                    <DataGridTextColumn Header="Ngày sinh" Binding="{Binding Ngaysinh}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                             

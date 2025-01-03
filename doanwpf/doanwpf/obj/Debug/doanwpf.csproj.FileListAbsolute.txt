@@ -250,7 +250,6 @@ C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\ADD\AddProvider.g.cs
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\CustomerControl.g.cs
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\EmployeesControl.g.cs
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\HomeControl.g.cs
-C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\ImportInvoiceControl.g.cs
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\InvoiceControl.g.cs
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\ProductsControl.g.cs
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\ProviderControl.g.cs
@@ -277,7 +276,6 @@ C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\ADD\AddProvider.baml
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\CustomerControl.baml
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\EmployeesControl.baml
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\HomeControl.baml
-C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\ImportInvoiceControl.baml
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\InvoiceControl.baml
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\ProductsControl.baml
 C:\ONEDRIVE\Documents\cuoiky\doanwpf\doanwpf\obj\Debug\controls\ProviderControl.baml

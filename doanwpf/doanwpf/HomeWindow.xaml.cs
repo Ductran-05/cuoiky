@@ -52,10 +52,6 @@ namespace doanwpf
             ContenArea.Children.Add(new WarehouseControl());
         }
 
-        private void btnimportclick(object sender, RoutedEventArgs e)
-        {
-            ContenArea.Children.Add(new ImportInvoiceControl());
-        }
 
         private void btncustomerclick(object sender, RoutedEventArgs e)
         {

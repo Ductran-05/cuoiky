@@ -56,7 +56,7 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
                                     <DataGridTextColumn Header="Tên Sản Phẩm" Binding="{Binding TenSP}" />
                                     <DataGridTextColumn Header="Tồn kho" Binding="{Binding Tonkho}" />
                                     <DataGridTextColumn Header="Size" Binding="{Binding Size}" />
-                                    <DataGridTextColumn Header="Mã chất liệu" Binding="{Binding MaCL}" Width="*" />
+                                    <DataGridTextColumn Header="Mã chất liệu" Binding="{Binding MaCL}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
 
@@ -94,7 +94,7 @@ materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
                                     <DataGridTextColumn Header="Mã nhân viên" Binding="{Binding MaNV}" />
                                     <DataGridTextColumn Header="Ngày nhập hàng" Binding="{Binding NgayHD}" />
                                     <DataGridTextColumn Header="Mã nhà cung cấp" Binding="{Binding MaNCC}" />
-                                    <DataGridTextColumn Header="Trị giá" Binding="{Binding Trigia}" Width="*" />
+                                    <DataGridTextColumn Header="Trị giá" Binding="{Binding Trigia}"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                             

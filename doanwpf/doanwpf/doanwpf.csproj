@@ -118,9 +118,6 @@
     <Compile Include="controls\HomeControl.xaml.cs">
       <DependentUpon>HomeControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\ImportInvoiceControl.xaml.cs">
-      <DependentUpon>ImportInvoiceControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="controls\InvoiceControl.xaml.cs">
       <DependentUpon>InvoiceControl.xaml</DependentUpon>
     </Compile>
@@ -257,10 +254,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="controls\HomeControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="controls\ImportInvoiceControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -57,7 +57,7 @@ materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
                             <DataGridTextColumn Header="Mã nhân viên" Binding="{Binding MaNV}" />
                             <DataGridTextColumn Header="Ngày hóa đơn" Binding="{Binding NgayHD}" />
                             <DataGridTextColumn Header="Mã khách hàng" Binding="{Binding MaKH}" />
-                            <DataGridTextColumn Header="Trị giá" Binding="{Binding Trigia}" Width="*" />
+                            <DataGridTextColumn Header="Trị giá" Binding="{Binding Trigia}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

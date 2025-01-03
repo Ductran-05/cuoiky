@@ -61,7 +61,7 @@ materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2">
                                 <DataGrid.Columns >
                                     <DataGridTextColumn x:Name="mancctxt" Header="Mã nhà cung cấp" Binding="{Binding MaNCC}" />
                                     <DataGridTextColumn x:Name="tenncctxt" Header="Tên nhà cung cáp" Binding="{Binding TenNCC}" />
-                                    <DataGridTextColumn x:Name="phonenum" Header="Số điện thoại" Binding="{Binding SDT}" Width="*" />
+                                    <DataGridTextColumn x:Name="phonenum" Header="Số điện thoại" Binding="{Binding SDT}" />
                                 </DataGrid.Columns>
                             </DataGrid>
                             
