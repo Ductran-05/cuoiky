@@ -22,7 +22,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
         <Grid Grid.Row="0">
             <Label HorizontalAlignment="Left" Content="Warehouse" VerticalAlignment="Center" Margin="20,20,20,20"
       FontFamily="Bahnschrift SemiLight Condensed" FontSize="24" Background="#FF192537" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" />
-            <Button  Content="Thêm hóa đơn" Height="30" Width="150" Background="#FF192537"
+            <Button  Content="Thêm đơn nhập" Height="30" Width="150" Background="#FF192537"
 HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="Button_Click"/>
         </Grid>
         <Grid Grid.Row="1">
@@ -62,7 +62,7 @@ HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,20,5" Click="
 
                         </Grid>
                     </TabItem>
-                    <TabItem Margin="10,0,0,0" Header="Danh sách hóa đơn">
+                    <TabItem Margin="10,0,0,0" Header="Danh sách nhập hàng">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"/>

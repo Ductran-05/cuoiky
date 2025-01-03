@@ -22,7 +22,7 @@ FontFamily="{DynamicResource MaterialDesignFont}"
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#FF192537">
             <Label  Margin="20,0,0,0" FontSize="20" Foreground="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontFamily="Bahnschrift SemiLight Condensed">
-                Thông tin hóa đơn
+                Thông tin đơn nhập hàng
             </Label>
         </Grid>
         <Grid Grid.Row="1" >
@@ -56,19 +56,13 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                 ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click">
                                     <TextBlock Text="Thêm" />
                                 </Button>
-                                <Button Width="100" Height="30" Margin="10"
-                                materialDesign:ButtonAssist.CornerRadius="15"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" >
-                                    <TextBlock Text="Xóa" />
-                                </Button>
                             </StackPanel>
                         </Grid>
                         <Border Height="200"
                                 CornerRadius="50">
-                            <DataGrid  Margin="20,5,20,5" x:Name="dgproductininvoice" AutoGenerateColumns="False" 
-                                       ItemsSource="{Binding listcthd}" CanUserAddRows="True">
+                            <DataGrid  IsReadOnly="True" Margin="20,5,20,5" x:Name="dgproductininvoice" AutoGenerateColumns="False" 
+                                       ItemsSource="{Binding listcthd}"
+                                       SelectionChanged="dgproductininvoice_SelectionChanged" CanUserAddRows="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Mã sản phẩm" Binding="{Binding MaSP}" Width="*"/>
                                     <DataGridTextColumn Header="Số Lượng" Binding="{Binding Soluong}" Width="100"/>

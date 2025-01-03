@@ -37,13 +37,13 @@
                 </Label>
             </Grid>
             <Grid Grid.Row="1">
-                <TextBox Margin="30,0,30,0" Name="UsernameTextBox" Height="35" Text="DANH"
+                <TextBox Margin="30,0,30,0" Name="UsernameTextBox" Height="35" 
   VerticalAlignment="Center"
   materialDesign:HintAssist.Hint="Username"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
             </Grid>
             <Grid Grid.Row="2">
-                <PasswordBox Margin="30,0,30,0" Password="danh"
+                <PasswordBox Margin="30,0,30,0"
                  Height="{Binding ElementName=UsernameTextBox, Path=Height}"
   x:Name="FloatingPasswordBox"
   materialDesign:HintAssist.Hint="Password"

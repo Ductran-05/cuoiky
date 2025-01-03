@@ -57,13 +57,6 @@ FontFamily="{DynamicResource MaterialDesignFont}"
                                 ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Click="Button_Click">        
                                     <TextBlock Text="Thêm" />
                                 </Button>
-                               <Button Width="100" Height="30" Margin="10"
-                                materialDesign:ButtonAssist.CornerRadius="15"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                                ToolTip="MaterialDesignRaisedDarkButton with Round Corners" >
-                                    <TextBlock Text="Xóa" />
-                               </Button>
                             </StackPanel>
                         </Grid>
                         <Border Height="200"

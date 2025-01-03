@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static MaterialDesignThemes.Wpf.Theme.ToolBar;
+using static MaterialDesignThemes.Wpf.Theme;
 
 namespace doanwpf.ADD
 {
@@ -130,6 +132,37 @@ namespace doanwpf.ADD
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = dgproductininvoice.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                // Ép kiểu ItemsSource về danh sách (ObservableCollection)
+                var itemsSource = dgproductininvoice.ItemsSource as ObservableCollection<object>;
+                if (itemsSource != null)
+                {
+                    // Xóa item khỏi danh sách
+                    itemsSource.Remove(selectedItem);
+
+                    // Optional: Xóa SelectedItem
+                    dgproductininvoice.SelectedItem = null;
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xóa vì ItemsSource không phải là ObservableCollection.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa.");
+            }
+        }
+
+        private void dgproductininvoice_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
         }
     }
 }
